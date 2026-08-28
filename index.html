@@ -1,0 +1,812 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio of Bahesty Monfared — final-year Electrical &amp; Electronic Engineering student at AIUB, Dhaka. IoT, embedded systems, power and renewable energy projects.">
+<title>Bahesty Monfared</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* ── tokens ───────────────────────────────────────────────────────── */
+:root{
+  --paper:#F5F7F8;
+  --surface:#FFFFFF;
+  --surface-sunk:#EDF0F2;
+  --ink:#12181D;
+  --ink-soft:#3A464F;
+  --muted:#67757F;
+  --rule:#D6DCE0;
+  --rule-soft:#E4E9EC;
+  --accent:#14506B;
+  --accent-soft:#E3EDF2;
+  --accent-ink:#0E3D52;
+
+  --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+
+  --measure:66ch;
+  --pad:clamp(1.25rem,5vw,4rem);
+  --maxw:1180px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E1317;
+    --surface:#151B21;
+    --surface-sunk:#1A2229;
+    --ink:#E7EDF1;
+    --ink-soft:#B7C3CC;
+    --muted:#8695A0;
+    --rule:#28323A;
+    --rule-soft:#1F272E;
+    --accent:#74B8D4;
+    --accent-soft:#17303C;
+    --accent-ink:#9ACFE5;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1317;
+  --surface:#151B21;
+  --surface-sunk:#1A2229;
+  --ink:#E7EDF1;
+  --ink-soft:#B7C3CC;
+  --muted:#8695A0;
+  --rule:#28323A;
+  --rule-soft:#1F272E;
+  --accent:#74B8D4;
+  --accent-soft:#17303C;
+  --accent-ink:#9ACFE5;
+}
+
+/* ── base ─────────────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--f-body);
+  font-size:17px;
+  line-height:1.62;
+  font-synthesis-weight:none;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline;text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+
+/* ── nav ──────────────────────────────────────────────────────────── */
+.nav{
+  position:sticky;top:0;z-index:50;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:saturate(150%) blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+.nav__in{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  min-height:52px;
+}
+.nav__mark{
+  font-family:var(--f-mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--ink);font-weight:500;white-space:nowrap;
+}
+.nav__links{display:flex;gap:clamp(.7rem,2.4vw,1.6rem);overflow-x:auto;scrollbar-width:none}
+.nav__links::-webkit-scrollbar{display:none}
+.nav__links a{
+  font-family:var(--f-mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--muted);white-space:nowrap;padding:.35rem 0;
+  border-bottom:1.5px solid transparent;
+}
+.nav__links a:hover{color:var(--ink);text-decoration:none;border-bottom-color:var(--accent)}
+@media (max-width:600px){.nav__mark{display:none}.nav__links{width:100%;justify-content:space-between}}
+
+/* ── shared type ──────────────────────────────────────────────────── */
+.eyebrow{
+  font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);margin:0;
+}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:600;text-wrap:balance;margin:0;line-height:1.15}
+p{margin:0}
+.prose{max-width:var(--measure)}
+
+/* ── hero ─────────────────────────────────────────────────────────── */
+.hero{padding-block:clamp(3rem,9vw,6rem) clamp(2.5rem,6vw,4rem)}
+.hero__name{
+  font-size:clamp(2.6rem,8.5vw,5rem);
+  font-weight:700;letter-spacing:-.028em;line-height:1;
+  margin-bottom:1.1rem;
+}
+.hero__cols{
+  display:grid;align-items:start;
+  gap:clamp(1.5rem,4vw,3.5rem);
+  margin-top:clamp(1.6rem,3.5vw,2.4rem);
+}
+@media (min-width:900px){
+  .hero__cols{grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);align-items:end}
+}
+.hero__thesis{
+  font-family:var(--f-display);font-weight:500;
+  font-size:clamp(1.35rem,3.3vw,2.05rem);
+  line-height:1.28;letter-spacing:-.016em;
+  max-width:20ch;margin:0;
+  color:var(--ink);
+}
+.hero__thesis em{font-style:normal;color:var(--accent)}
+.hero__lede{
+  color:var(--ink-soft);max-width:56ch;font-size:1.03rem;margin:0;
+  padding-left:clamp(0rem,1.5vw,1.4rem);
+  border-left:1px solid var(--rule);
+}
+@media (max-width:899px){.hero__lede{border-left:0;padding-left:0}}
+
+/* spec strip */
+.spec{
+  display:grid;gap:0;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  border-top:1px solid var(--rule);
+  margin-top:clamp(2.2rem,5vw,3.2rem);
+}
+.spec__cell{
+  padding:1rem 1.1rem 1.1rem 0;
+  border-bottom:1px solid var(--rule-soft);
+}
+.spec__k{
+  font-family:var(--f-mono);font-size:.67rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted);display:block;margin-bottom:.4rem;
+}
+.spec__v{
+  font-family:var(--f-display);font-weight:500;font-size:.98rem;line-height:1.35;
+  font-variant-numeric:tabular-nums;color:var(--ink);
+}
+
+/* ── contact chips ────────────────────────────────────────────────── */
+.chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:2rem;align-items:center}
+.chip{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--f-mono);font-size:.78rem;letter-spacing:.02em;
+  padding:.5rem .85rem;border:1px solid var(--rule);border-radius:2px;
+  color:var(--ink-soft);background:var(--surface);
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.chip--solid{background:var(--accent);border-color:var(--accent);color:var(--paper);font-weight:500}
+:root[data-theme="dark"] .chip--solid,
+:root:not([data-theme="light"]) .chip--solid{color:#0E1317}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .chip--solid{color:#FFFFFF}}
+.chip--solid:hover{color:var(--paper);opacity:.88;text-decoration:none;border-color:var(--accent)}
+.chip svg{width:14px;height:14px;flex:none;stroke:currentColor;fill:none;stroke-width:1.6}
+
+/* ── approach sequence ────────────────────────────────────────────── */
+.loop{
+  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding-block:1.6rem;margin-top:clamp(2.4rem,5vw,3.4rem);
+}
+.loop__label{margin-bottom:1.1rem}
+.loop__steps{
+  list-style:none;margin:0;padding:0;
+  display:flex;flex-wrap:wrap;gap:.45rem .3rem;align-items:baseline;
+}
+.loop__steps li{
+  font-family:var(--f-mono);font-size:.8rem;color:var(--ink-soft);
+  display:inline-flex;align-items:baseline;gap:.3rem;
+}
+.loop__steps li::after{content:"→";color:var(--accent);margin-left:.35rem;opacity:.75}
+.loop__steps li:last-child::after{content:""}
+.loop__n{color:var(--muted);font-size:.68rem}
+
+/* ── sections ─────────────────────────────────────────────────────── */
+.sec{padding-block:clamp(3rem,7vw,5rem);border-top:1px solid var(--rule)}
+.sec__head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
+  margin-bottom:clamp(1.8rem,4vw,2.8rem);flex-wrap:wrap;
+}
+.sec__title{font-size:clamp(1.5rem,3.4vw,2.05rem);letter-spacing:-.018em}
+.sec__note{font-family:var(--f-mono);font-size:.72rem;color:var(--muted);letter-spacing:.06em}
+
+/* group label inside projects */
+.grp{
+  font-family:var(--f-mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;
+  color:var(--muted);padding-bottom:.7rem;border-bottom:1px solid var(--rule);
+  margin-bottom:2rem;
+}
+.grp:not(:first-of-type){margin-top:clamp(2.5rem,5vw,3.5rem)}
+
+/* ── datasheet entry (project / job / school) ─────────────────────── */
+.entry{
+  display:grid;
+  grid-template-columns:minmax(190px,240px) minmax(0,1fr);
+  gap:clamp(1rem,3vw,3rem);
+  padding-block:clamp(1.6rem,3.5vw,2.4rem);
+  border-bottom:1px solid var(--rule-soft);
+}
+.entry:last-child{border-bottom:0}
+@media (max-width:760px){
+  .entry{grid-template-columns:1fr;gap:.9rem}
+}
+.rail{display:flex;flex-direction:column;gap:.55rem}
+.rail__kind{
+  font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);font-weight:500;line-height:1.45;
+}
+.rail__meta{
+  font-family:var(--f-mono);font-size:.73rem;color:var(--muted);line-height:1.55;
+  font-variant-numeric:tabular-nums;
+}
+.rail__meta span{display:block}
+
+.body__title{font-size:clamp(1.15rem,2.4vw,1.42rem);letter-spacing:-.012em;margin-bottom:.7rem}
+.body__sum{color:var(--ink-soft);max-width:var(--measure);margin-bottom:1.1rem}
+.did{
+  list-style:none;margin:0 0 1.2rem;padding:0;
+  display:flex;flex-direction:column;gap:.6rem;max-width:var(--measure);
+}
+.did li{position:relative;padding-left:1.15rem;color:var(--ink);font-size:.97rem;line-height:1.55}
+.did li::before{
+  content:"";position:absolute;left:0;top:.62em;
+  width:5px;height:1.5px;background:var(--accent);
+}
+.did strong{font-weight:600;font-family:var(--f-display);font-size:.95em}
+
+.tools{display:flex;flex-wrap:wrap;gap:.35rem}
+.tool{
+  font-family:var(--f-mono);font-size:.7rem;letter-spacing:.02em;
+  color:var(--ink-soft);background:var(--surface-sunk);
+  padding:.28rem .5rem;border-radius:2px;
+}
+
+/* ── skills ───────────────────────────────────────────────────────── */
+.skills{
+  display:grid;gap:0;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  border-top:1px solid var(--rule);
+}
+.skill{
+  padding:1.4rem 1.6rem 1.5rem 0;
+  border-bottom:1px solid var(--rule-soft);
+}
+.skill h3{
+  font-family:var(--f-mono);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;margin-bottom:.7rem;
+}
+.skill p{font-size:.97rem;color:var(--ink);line-height:1.55}
+
+/* ── closing ──────────────────────────────────────────────────────── */
+.close__grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(1.6rem,4vw,2.4rem)}
+@media (min-width:860px){.close__grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}}
+.note{
+  background:var(--accent-soft);
+  border-left:2px solid var(--accent);
+  padding:1.2rem 1.4rem;
+  font-size:.97rem;color:var(--ink);
+}
+.note p+p{margin-top:.7rem}
+
+/* ── footer ───────────────────────────────────────────────────────── */
+.foot{
+  border-top:1px solid var(--rule);
+  padding-block:1.8rem 2.4rem;
+  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;color:var(--muted);
+}
+
+/* ── reveal ───────────────────────────────────────────────────────── */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
+
+/* ── print / PDF ──────────────────────────────────────────────────── */
+@media print{
+  :root{
+    --paper:#FFFFFF;--surface:#FFFFFF;--surface-sunk:#F2F4F6;
+    --ink:#101418;--ink-soft:#2E3840;--muted:#5A6771;
+    --rule:#C9D0D5;--rule-soft:#DFE4E8;
+    --accent:#14506B;--accent-soft:#EEF3F6;
+  }
+  body{background:#fff;font-size:9.3pt;line-height:1.42}
+  .wrap{max-width:none;padding-inline:0}
+  .nav{display:none}
+  .rv{opacity:1!important;transform:none!important}
+  .hero{padding-block:0 .5rem}
+  .hero__name{font-size:26pt;margin-bottom:.35rem}
+  .hero__cols{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);align-items:start;gap:1.2rem;margin-top:.7rem}
+  .hero__thesis{font-size:12pt;max-width:24ch}
+  .hero__lede{font-size:9.3pt;max-width:none}
+  .spec{margin-top:.9rem}
+  .spec__cell{padding:.45rem .8rem .5rem 0}
+  .chips{margin-top:.8rem;gap:.35rem}
+  .chip{background:#fff!important;color:var(--ink-soft)!important;border-color:var(--rule);padding:.25rem .5rem;font-size:8pt}
+  .chip--solid{background:#fff!important;color:var(--ink)!important;border-color:var(--accent)}
+  .chip[href$=".pdf"],.chip svg{display:none}
+  .loop{margin-top:.9rem;padding-block:.7rem}
+  .loop__steps li{font-size:7.6pt}
+  .sec{padding-block:.85rem;break-inside:auto}
+  .sec__head{margin-bottom:.8rem}
+  .sec__title{font-size:14pt}
+  .grp{margin-bottom:.7rem;padding-bottom:.35rem}
+  .grp:not(:first-of-type){margin-top:1rem}
+  .entry{
+    break-inside:avoid;page-break-inside:avoid;
+    padding-block:.55rem;gap:1.1rem;
+    grid-template-columns:minmax(150px,168px) minmax(0,1fr);
+  }
+  .rail{gap:.25rem}
+  .rail__kind{font-size:7.8pt}
+  .rail__meta{font-size:7.8pt;line-height:1.4}
+  .body__title{font-size:11pt;margin-bottom:.35rem}
+  .body__sum{margin-bottom:.5rem;max-width:none}
+  .did{gap:.28rem;margin-bottom:.5rem;max-width:none}
+  .did li{font-size:9pt;line-height:1.4}
+  .tool{background:var(--surface-sunk)!important;font-size:7.4pt;padding:.15rem .35rem}
+  .skills{grid-template-columns:repeat(3,1fr)}
+  .skill{padding:.6rem 1rem .6rem 0}
+  .skill p{font-size:9pt}
+  .note{background:var(--accent-soft)!important;padding:.7rem .9rem;font-size:9pt}
+  .foot{padding-block:.7rem;font-size:7.6pt}
+  a{color:var(--ink)!important;text-decoration:none}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" aria-label="Sections">
+  <div class="wrap nav__in">
+    <span class="nav__mark">Bahesty Monfared</span>
+    <div class="nav__links">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="wrap hero">
+  <p class="eyebrow">Electrical &amp; Electronic Engineering &nbsp;·&nbsp; Dhaka, Bangladesh</p>
+  <h1 class="hero__name">Bahesty&nbsp;Monfared</h1>
+
+  <div class="hero__cols">
+    <p class="hero__thesis">I build things I don&rsquo;t yet know how to build &mdash; then <em>write down how they work.</em></p>
+
+    <p class="hero__lede">
+      Final-year BSc student in Electrical and Electronic Engineering at AIUB. Most of my work sits where
+      hardware meets software: an ESP32 driving a real pump, a solar array that has to hand over to the grid
+      cleanly, a dataset that has to be cleaned before it can tell you anything. Alongside that, I have spent
+      several years teaching &mdash; which is where I learned that a design is only finished when somebody who
+      wasn&rsquo;t in the room can follow it.
+    </p>
+  </div>
+
+  <div class="spec">
+    <div class="spec__cell"><span class="spec__k">Degree</span><span class="spec__v">BSc, Electrical &amp; Electronic Engineering</span></div>
+    <div class="spec__cell"><span class="spec__k">Institution</span><span class="spec__v">American International University&ndash;Bangladesh</span></div>
+    <div class="spec__cell"><span class="spec__k">Expected graduation</span><span class="spec__v">December 2026</span></div>
+    <div class="spec__cell"><span class="spec__k">CGPA</span><span class="spec__v">3.38 / 4.00</span></div>
+  </div>
+
+  <div class="chips">
+    <a class="chip chip--solid" href="mailto:bahestymonfared@gmail.com">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3 6l9 6.5L21 6"/></svg>
+      bahestymonfared@gmail.com
+    </a>
+    <a class="chip" href="https://www.linkedin.com/in/bahesty-monfared-b4a6b926b" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10.5v6.5M7 7.2v.1M11.5 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/></svg>
+      LinkedIn
+    </a>
+    <a class="chip" href="tel:+8801834211666">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5z"/></svg>
+      +880 1834-211666
+    </a>
+    <a class="chip" href="Bahesty_Monfared_Portfolio.pdf" download>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11m0 0l-4-4m4 4l4-4M4.5 18.5h15"/></svg>
+      Download portfolio (PDF)
+    </a>
+  </div>
+
+  <div class="loop">
+    <p class="eyebrow loop__label">How I take on something I&rsquo;ve never done before</p>
+    <ol class="loop__steps">
+      <li><span class="loop__n">01</span> understand what is being asked</li>
+      <li><span class="loop__n">02</span> break it into requirements</li>
+      <li><span class="loop__n">03</span> check what evidence I have</li>
+      <li><span class="loop__n">04</span> name the gaps</li>
+      <li><span class="loop__n">05</span> research what I don&rsquo;t know</li>
+      <li><span class="loop__n">06</span> decide</li>
+      <li><span class="loop__n">07</span> write down why</li>
+    </ol>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ══ WORK ══════════════════════════════════════════════════════ -->
+<section class="sec rv" id="work">
+  <div class="sec__head">
+    <h2 class="sec__title">Selected work</h2>
+    <p class="sec__note">Six projects &nbsp;·&nbsp; 2024&ndash;2026</p>
+  </div>
+
+  <p class="grp">Engineering &amp; hardware</p>
+
+  <article class="entry">
+    <div class="rail">
+      <p class="rail__kind">Final-year capstone</p>
+      <p class="rail__meta">
+        <span>AIUB, Faculty of Engineering</span>
+        <span>Role: sensing, control &amp; firmware</span>
+        <span>Status: built and defended</span>
+      </p>
+    </div>
+    <div>
+      <h3 class="body__title">HydroSense &mdash; IoT smart irrigation system</h3>
+      <p class="body__sum">
+        An automated irrigation controller for small farms. Soil moisture and flow sensors feed an ESP32,
+        which drives the pump zone by zone instead of running on a fixed timer. It reports over GSM so it
+        works on land with no Wi&#8209;Fi, and the interface is a bilingual progressive web app &mdash; a farmer
+        can use it on a low-end phone with a weak connection.
+      </p>
+      <ul class="did">
+        <li><strong>Designed the sensing and control side</strong> &mdash; soil moisture and flow sensor integration, relay-driven pump control, and the zone logic that decides when to water.</li>
+        <li><strong>Wrote the ESP32 firmware</strong> and dealt with the electrical problems that only appear once a real pump is attached, including separating the pump supply from the control electronics so the board stopped resetting on pump start-up.</li>
+        <li><strong>Taught myself progressive web app development from scratch</strong> &mdash; offline caching, an installable interface, and a bilingual layout for users who don&rsquo;t read English. None of that is in an EEE syllabus.</li>
+        <li><strong>Wrote the capstone defence book</strong> documenting the design decisions, the test results, and the reasoning behind each one.</li>
+      </ul>
+      <div class="tools">
+        <span class="tool">ESP32</span><span class="tool">Soil moisture &amp; flow sensors</span><span class="tool">GSM module</span>
+        <span class="tool">Relay control</span><span class="tool">C / C++</span><span class="tool">HTML / CSS / JS (PWA)</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="entry">
+    <div class="rail">
+      <p class="rail__kind">Team project · Group 2026.2.7</p>
+      <p class="rail__meta">
+        <span>AIUB &nbsp;·&nbsp; four members</span>
+        <span>Role: embedded &amp; data pipeline</span>
+        <span>Prototype tested 19&ndash;27 Jul 2026</span>
+      </p>
+    </div>
+    <div>
+      <h3 class="body__title">Hybrid solar&ndash;grid fast charging system with AI diagnostics</h3>
+      <p class="body__sum">
+        A charging system that draws from solar first and falls back to the grid, with MPPT tracking, a smart
+        battery management layer for protection, and a machine learning pipeline that flags faults from live
+        sensor data. An ESP32 acts as the edge node; a Raspberry&nbsp;Pi Zero&nbsp;2&nbsp;W runs the server and the model.
+        Built as a working prototype, then written up as a six-chapter project book.
+      </p>
+      <ul class="did">
+        <li><strong>Built the embedded side</strong> &mdash; ESP32 firmware split into sensing, control, display and network modules, reporting to the Raspberry Pi server.</li>
+        <li><strong>Owned the diagnostics dataset</strong> &mdash; 302,915 raw samples cleaned down to 301,696 usable ones, working through each cleaning decision rather than accepting the raw log as it came.</li>
+        <li><strong>Compared simulated behaviour against measured hardware</strong> and documented where the two disagreed and why, instead of reporting only the runs that matched.</li>
+        <li><strong>Produced the documentation</strong> &mdash; the six-chapter book, appendices of IC datasheets and source code, and a condensed IEEE-format summary paper drawn from it. Cleared plagiarism screening at 8% similarity with no integrity flags.</li>
+      </ul>
+      <div class="tools">
+        <span class="tool">ESP32</span><span class="tool">Raspberry Pi Zero 2 W</span><span class="tool">MPPT</span><span class="tool">BMS</span>
+        <span class="tool">Python</span><span class="tool">ML pipeline</span><span class="tool">C / C++</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="entry">
+    <div class="rail">
+      <p class="rail__kind">Course project · Renewable Energy Technology</p>
+      <p class="rail__meta">
+        <span>AIUB &nbsp;·&nbsp; group</span>
+        <span>Role: modelling &amp; sizing</span>
+        <span>Output: IEEE-format report</span>
+      </p>
+    </div>
+    <div>
+      <h3 class="body__title">Off-grid solar PV system design and simulation for Bangladesh</h3>
+      <p class="body__sum">
+        A full sizing and simulation study for a standalone solar installation under Bangladeshi irradiance and
+        load conditions, ending in a 2S&nbsp;&times;&nbsp;4P eight-module array configuration. The work covered load
+        estimation, panel and battery sizing, and modelling how the system would behave before any of it was built.
+      </p>
+      <ul class="did">
+        <li><strong>Modelled the array in MATLAB and Simulink</strong> and produced the I&ndash;V and P&ndash;V characteristics used to justify the chosen configuration.</li>
+        <li><strong>Worked the sizing calculations by hand first</strong> &mdash; irradiance, module output, series and parallel arrangement &mdash; so the simulation was checking my reasoning rather than replacing it.</li>
+        <li><strong>Wrote it up in IEEE format</strong>, which meant stating assumptions explicitly and citing a source for every figure I hadn&rsquo;t measured myself.</li>
+      </ul>
+      <div class="tools">
+        <span class="tool">MATLAB</span><span class="tool">Simulink</span><span class="tool">PV system sizing</span><span class="tool">IEEE technical writing</span>
+      </div>
+    </div>
+  </article>
+
+  <p class="grp">Research &amp; analysis</p>
+
+  <article class="entry">
+    <div class="rail">
+      <p class="rail__kind">Undergraduate thesis</p>
+      <p class="rail__meta">
+        <span>AIUB &nbsp;·&nbsp; group research</span>
+        <span>Role: dataset evaluation &amp; method design</span>
+        <span>Status: in progress</span>
+      </p>
+    </div>
+    <div>
+      <h3 class="body__title">Effect of colour and layout on user attention in web interfaces</h3>
+      <p class="body__sum">
+        A study of how visual design choices change where people actually look on a web page. Much of the work
+        was evaluating existing eye-tracking and saliency datasets against our requirements, then designing our
+        own experiments for the parts no dataset covered.
+      </p>
+      <ul class="did">
+        <li><strong>Evaluated published eye-tracking and saliency datasets</strong> &mdash; UEyes, Imp1k, FiWI &mdash; comparing what each one measured against what the study needed. That is a requirements-matching exercise before it is a research one.</li>
+        <li><strong>Helped design the experiments for the gaps</strong>: A/B testing, five-second memory tests, blur tests, distraction tests and side-by-side ranking.</li>
+        <li><strong>Worked in a field with no electrical engineering content at all</strong>, which meant reading unfamiliar literature and learning another discipline&rsquo;s vocabulary before I could contribute anything.</li>
+      </ul>
+      <div class="tools">
+        <span class="tool">Research methodology</span><span class="tool">Dataset evaluation</span><span class="tool">Experimental design</span><span class="tool">Literature review</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="entry">
+    <div class="rail">
+      <p class="rail__kind">Coursework · Human&ndash;Computer Interaction</p>
+      <p class="rail__meta">
+        <span>AIUB</span>
+        <span>Role: sole author</span>
+        <span>Output: annotated presentation</span>
+      </p>
+    </div>
+    <div>
+      <h3 class="body__title">Usability analysis of the Steam desktop application</h3>
+      <p class="body__sum">
+        A structured evaluation of a large, widely used desktop application against Don Norman&rsquo;s design
+        principles &mdash; visibility, feedback, affordance, mapping, constraints and consistency &mdash; delivered as
+        an annotated presentation.
+      </p>
+      <ul class="did">
+        <li><strong>Judged a messy real interface against a fixed checklist</strong>, screen by screen, instead of offering a general opinion about whether the app was good.</li>
+        <li><strong>Annotated the evidence directly on screenshots</strong> so a reader could check the conclusion themselves rather than take my word for it.</li>
+      </ul>
+      <div class="tools">
+        <span class="tool">Usability heuristics</span><span class="tool">Structured evaluation</span><span class="tool">Annotated presentation</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="entry">
+    <div class="rail">
+      <p class="rail__kind">Teaching material</p>
+      <p class="rail__meta">
+        <span>HSC ICT curriculum</span>
+        <span>Role: built from scratch</span>
+      </p>
+    </div>
+    <div>
+      <h3 class="body__title">Animated HTML &amp; web design lesson set</h3>
+      <p class="body__sum">
+        A teaching resource for the HSC ICT web design unit, built as an animated presentation with the
+        demonstrations coded rather than described &mdash; so students see the markup and the rendered result change
+        together instead of reading about it.
+      </p>
+      <div class="tools">
+        <span class="tool">HTML</span><span class="tool">CSS</span><span class="tool">PowerPoint animation</span><span class="tool">Curriculum design</span>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ══ EXPERIENCE ════════════════════════════════════════════════ -->
+<section class="sec rv" id="experience">
+  <div class="sec__head">
+    <h2 class="sec__title">Experience</h2>
+    <p class="sec__note">Teaching &nbsp;·&nbsp; customer-facing work</p>
+  </div>
+
+  <article class="entry">
+    <div class="rail">
+      <p class="rail__kind">Academic teacher</p>
+      <p class="rail__meta">
+        <span>Carupath Academic Coaching</span>
+        <span>IT department</span>
+        <span>Oct 2022 &ndash; Sep 2025</span>
+      </p>
+    </div>
+    <div>
+      <h3 class="body__title">Teaching technical subjects to students starting from zero</h3>
+      <p class="body__sum">
+        Three years teaching IT subjects to students with no background in them. Teaching a subject to somebody
+        who has never seen it is the fastest way to find out where your own explanation breaks down &mdash; and
+        that habit carries straight into writing a design document somebody else has to act on.
+      </p>
+      <ul class="did">
+        <li><strong>Built lesson material from the ground up</strong> for students at mixed levels within the same class.</li>
+        <li><strong>Explained technical judgements to non-technical listeners</strong> daily &mdash; the same task as defending a design decision to a client or a panel.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="entry">
+    <div class="rail">
+      <p class="rail__kind">Volunteer teacher</p>
+      <p class="rail__meta">
+        <span>Bidyanondo Foundation</span>
+        <span>Jan 2019 &ndash; Dec 2023</span>
+      </p>
+    </div>
+    <div>
+      <h3 class="body__title">Five years teaching in a resource-limited setting</h3>
+      <p class="body__sum">
+        Volunteer teaching with limited materials and a wide spread of ability in one room, which meant
+        rebuilding the same explanation several ways until it landed for everybody rather than for the fastest
+        student.
+      </p>
+    </div>
+  </article>
+
+  <article class="entry">
+    <div class="rail">
+      <p class="rail__kind">Brand promoter</p>
+      <p class="rail__meta">
+        <span>ACI Limited</span>
+        <span>Twinkle Baby Pant Diaper</span>
+        <span>Feb 2023 &ndash; Nov 2023</span>
+      </p>
+    </div>
+    <div>
+      <h3 class="body__title">Direct customer-facing sales and product communication</h3>
+      <p class="body__sum">
+        Face-to-face promotion work for a consumer brand &mdash; a different communication discipline from a
+        classroom or a technical report, and the one that taught me how quickly you lose someone who
+        didn&rsquo;t ask to be talked to.
+      </p>
+    </div>
+  </article>
+</section>
+
+<!-- ══ EDUCATION ═════════════════════════════════════════════════ -->
+<section class="sec rv" id="education">
+  <div class="sec__head">
+    <h2 class="sec__title">Education</h2>
+  </div>
+
+  <article class="entry">
+    <div class="rail">
+      <p class="rail__kind">BSc &mdash; in progress</p>
+      <p class="rail__meta"><span>Expected December 2026</span></p>
+    </div>
+    <div>
+      <h3 class="body__title">Electrical &amp; Electronic Engineering</h3>
+      <p class="body__sum">American International University&ndash;Bangladesh (AIUB), Dhaka &nbsp;·&nbsp; CGPA 3.38 / 4.00 (ongoing)</p>
+      <div class="tools">
+        <span class="tool">Power systems</span><span class="tool">Renewable energy technology</span><span class="tool">Numerical methods</span>
+        <span class="tool">Web technologies</span><span class="tool">Human&ndash;computer interaction</span>
+      </div>
+    </div>
+  </article>
+
+  <article class="entry">
+    <div class="rail">
+      <p class="rail__kind">HSC &mdash; Science</p>
+      <p class="rail__meta"><span>2021 &nbsp;·&nbsp; GPA 5.00 / 5.00</span></p>
+    </div>
+    <div>
+      <h3 class="body__title">Mazid Jarina Foundation School and College</h3>
+    </div>
+  </article>
+
+  <article class="entry">
+    <div class="rail">
+      <p class="rail__kind">SSC &mdash; Science</p>
+      <p class="rail__meta"><span>2019 &nbsp;·&nbsp; GPA 4.39 / 5.00</span></p>
+    </div>
+    <div>
+      <h3 class="body__title">Secondary School Certificate</h3>
+    </div>
+  </article>
+</section>
+
+<!-- ══ SKILLS ════════════════════════════════════════════════════ -->
+<section class="sec rv" id="skills">
+  <div class="sec__head">
+    <h2 class="sec__title">Skills</h2>
+    <p class="sec__note">Tools I have actually shipped something with</p>
+  </div>
+  <div class="skills">
+    <div class="skill">
+      <h3>Design &amp; simulation</h3>
+      <p>AutoCAD · NI Multisim (all versions) · PSpice · MATLAB · Simulink · Proteus</p>
+    </div>
+    <div class="skill">
+      <h3>Programming</h3>
+      <p>C · C++ · Python (ML pipeline work) · HTML / CSS / JavaScript</p>
+    </div>
+    <div class="skill">
+      <h3>Hardware &amp; embedded</h3>
+      <p>ESP32 · Raspberry Pi Zero 2 W · sensor integration · relay and pump control · GSM modules · MPPT and BMS concepts</p>
+    </div>
+    <div class="skill">
+      <h3>Documentation</h3>
+      <p>IEEE-format technical writing · structured project books · MS Word / Excel / PowerPoint</p>
+    </div>
+    <div class="skill">
+      <h3>Domains</h3>
+      <p>Power systems · renewable energy · embedded IoT · numerical methods · web technologies · human&ndash;computer interaction</p>
+    </div>
+    <div class="skill">
+      <h3>Languages</h3>
+      <p>Bangla (native) · English (professional working proficiency)</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ═══════════════════════════════════════════════════ -->
+<section class="sec rv" id="contact">
+  <div class="sec__head">
+    <h2 class="sec__title">Get in touch</h2>
+    <p class="sec__note">Open to internships and graduate roles</p>
+  </div>
+
+  <div class="close__grid">
+    <div>
+      <p class="prose" style="color:var(--ink-soft)">
+        I&rsquo;m looking for internships and entry-level roles where I can keep working on real hardware and
+        real documentation &mdash; embedded and IoT, power and renewable energy, or engineering roles that involve
+        explaining technical work to people outside the team. I&rsquo;m based in Dhaka and available for on-site,
+        hybrid or remote work.
+      </p>
+      <div class="chips">
+        <a class="chip chip--solid" href="mailto:bahestymonfared@gmail.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3 6l9 6.5L21 6"/></svg>
+          bahestymonfared@gmail.com
+        </a>
+        <a class="chip" href="tel:+8801834211666">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5z"/></svg>
+          +880 1834-211666
+        </a>
+        <a class="chip" href="https://www.linkedin.com/in/bahesty-monfared-b4a6b926b" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10.5v6.5M7 7.2v.1M11.5 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/></svg>
+          LinkedIn
+        </a>
+        <a class="chip" href="Bahesty_Monfared_Portfolio.pdf" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11m0 0l-4-4m4 4l4-4M4.5 18.5h15"/></svg>
+          Portfolio PDF
+        </a>
+      </div>
+    </div>
+
+    <div class="note">
+      <p><strong>One thing stated plainly:</strong> I am in my final year and graduate in December 2026 &mdash; I don&rsquo;t hold the degree yet.</p>
+      <p>I&rsquo;d rather say that here than have it come up later. Everything on this page is work I have already done.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap foot">
+  <span>Bahesty Monfared &nbsp;·&nbsp; Dhaka, Bangladesh</span>
+  <span>Last updated August 2026</span>
+</footer>
+
+<script>
+(function(){
+  var els = document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){ e.classList.add('in'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+    });
+  },{rootMargin:'0px 0px -8% 0px',threshold:0.04});
+  els.forEach(function(e){ io.observe(e); });
+})();
+</script>
+
+</body>
+</html>
