@@ -3,11 +3,27 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Portfolio of Bahesty Monfared — final-year Electrical &amp; Electronic Engineering student at AIUB, Dhaka. IoT, embedded systems, power and renewable energy projects.">
-<title>Bahesty Monfared</title>
+<title>Bahesty Monfared — EEE, IoT &amp; Embedded Systems</title>
+<meta name="description" content="Portfolio of Bahesty Monfared — final-year Electrical &amp; Electronic Engineering student at AIUB, Dhaka. Team leader of HydroSense smart irrigation; IoT, embedded systems, renewable energy and app development.">
+<meta name="author" content="Bahesty Monfared">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Bahesty Monfared — EEE, IoT &amp; Embedded Systems">
+<meta property="og:description" content="Final-year EEE student at AIUB. Team leader of HydroSense, a smart drip-irrigation system for terraced farms in Bangladesh.">
+<meta property="og:url" content="https://bahestymonfared.github.io/">
+<meta property="og:image" content="https://bahestymonfared.github.io/bahesty-monfared.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#14506B">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%2314506B'/%3E%3Ctext x='32' y='42' font-family='Arial,sans-serif' font-size='26' font-weight='700' fill='white' text-anchor='middle'%3EBM%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<script>
+/* apply saved theme before paint */
+(function(){try{var t=localStorage.getItem('bm-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Bahesty Monfared","jobTitle":"Final-year BSc student, Electrical and Electronic Engineering","alumniOf":{"@type":"CollegeOrUniversity","name":"American International University-Bangladesh"},"address":{"@type":"PostalAddress","addressLocality":"Dhaka","addressCountry":"BD"},"email":"mailto:bahestymonfared@gmail.com","url":"https://bahestymonfared.github.io/","image":"https://bahestymonfared.github.io/bahesty-monfared.jpg","sameAs":["https://www.linkedin.com/in/bahesty-monfared-b4a6b926b","https://github.com/BahestyMonfared","https://bahestymonfared.github.io/hydrosense/"]}
+</script>
 <style>
 /* ── tokens ───────────────────────────────────────────────────────── */
 :root{
@@ -16,398 +32,586 @@
   --surface-sunk:#EDF0F2;
   --ink:#12181D;
   --ink-soft:#3A464F;
-  --muted:#67757F;
+  --muted:#5F6D77;
   --rule:#D6DCE0;
   --rule-soft:#E4E9EC;
   --accent:#14506B;
   --accent-soft:#E3EDF2;
   --accent-ink:#0E3D52;
+  --on-accent:#FFFFFF;
+  --ok:#1D7348;
+  --ok-soft:#E1F1E8;
+  --warn:#8E5B00;
+  --warn-soft:#F6ECD9;
+  --water:#2C7DA0;
+  --soil:#B9A58C;
+  --shadow:0 1px 2px rgba(18,24,29,.05),0 10px 28px -14px rgba(18,24,29,.22);
 
   --f-display:"Archivo","Helvetica Neue",Arial,sans-serif;
   --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
   --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
 
   --measure:66ch;
-  --pad:clamp(1.25rem,5vw,4rem);
+  --pad:clamp(1rem,5vw,4rem);
   --maxw:1180px;
+  color-scheme:light;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --paper:#0E1317;
-    --surface:#151B21;
-    --surface-sunk:#1A2229;
-    --ink:#E7EDF1;
-    --ink-soft:#B7C3CC;
-    --muted:#8695A0;
-    --rule:#28323A;
-    --rule-soft:#1F272E;
-    --accent:#74B8D4;
-    --accent-soft:#17303C;
-    --accent-ink:#9ACFE5;
+    --paper:#0E1317;--surface:#151B21;--surface-sunk:#1A2229;
+    --ink:#E7EDF1;--ink-soft:#B7C3CC;--muted:#8E9CA6;
+    --rule:#28323A;--rule-soft:#1F272E;
+    --accent:#74B8D4;--accent-soft:#17303C;--accent-ink:#9ACFE5;--on-accent:#0E1317;
+    --ok:#6FCF9C;--ok-soft:#14301F;--warn:#E3B45C;--warn-soft:#33270F;
+    --water:#5FB3D6;--soil:#6E5F4E;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 30px -14px rgba(0,0,0,.6);
+    color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
-  --paper:#0E1317;
-  --surface:#151B21;
-  --surface-sunk:#1A2229;
-  --ink:#E7EDF1;
-  --ink-soft:#B7C3CC;
-  --muted:#8695A0;
-  --rule:#28323A;
-  --rule-soft:#1F272E;
-  --accent:#74B8D4;
-  --accent-soft:#17303C;
-  --accent-ink:#9ACFE5;
+  --paper:#0E1317;--surface:#151B21;--surface-sunk:#1A2229;
+  --ink:#E7EDF1;--ink-soft:#B7C3CC;--muted:#8E9CA6;
+  --rule:#28323A;--rule-soft:#1F272E;
+  --accent:#74B8D4;--accent-soft:#17303C;--accent-ink:#9ACFE5;--on-accent:#0E1317;
+  --ok:#6FCF9C;--ok-soft:#14301F;--warn:#E3B45C;--warn-soft:#33270F;
+  --water:#5FB3D6;--soil:#6E5F4E;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 30px -14px rgba(0,0,0,.6);
+  color-scheme:dark;
 }
 
 /* ── base ─────────────────────────────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:64px}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 body{
-  margin:0;
-  background:var(--paper);
-  color:var(--ink);
-  font-family:var(--f-body);
-  font-size:17px;
-  line-height:1.62;
-  font-synthesis-weight:none;
-  -webkit-font-smoothing:antialiased;
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--f-body);font-size:17px;line-height:1.62;
+  font-synthesis-weight:none;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
 }
-img{max-width:100%}
+img{max-width:100%;display:block}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline;text-underline-offset:3px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
-
+button{font:inherit;color:inherit}
+[hidden]{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .wrap{max-width:var(--maxw);margin:0 auto;padding-inline:var(--pad)}
+.skip{position:absolute;left:-999px;top:0;background:var(--accent);color:var(--on-accent);padding:.5rem .8rem;z-index:100;font-family:var(--f-mono);font-size:.8rem}
+.skip:focus{left:.5rem;top:.5rem}
+
+/* ── scroll progress ─────────────────────────────────────────────── */
+.progress{position:fixed;top:0;left:0;height:2px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:var(--accent);z-index:60}
 
 /* ── nav ──────────────────────────────────────────────────────────── */
 .nav{
   position:sticky;top:0;z-index:50;
   background:color-mix(in srgb,var(--paper) 88%,transparent);
-  backdrop-filter:saturate(150%) blur(10px);
+  backdrop-filter:saturate(150%) blur(10px);-webkit-backdrop-filter:saturate(150%) blur(10px);
   border-bottom:1px solid var(--rule);
 }
-.nav__in{
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  min-height:52px;
-}
+.nav__in{display:flex;align-items:center;gap:1rem;min-height:54px}
 .nav__mark{
   font-family:var(--f-mono);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;
   color:var(--ink);font-weight:500;white-space:nowrap;
 }
-.nav__links{display:flex;gap:clamp(.7rem,2.4vw,1.6rem);overflow-x:auto;scrollbar-width:none}
+.nav__mark:hover{text-decoration:none;color:var(--accent)}
+.nav__links{display:flex;gap:clamp(.8rem,2vw,1.4rem);overflow-x:auto;scrollbar-width:none;margin-left:auto;padding-right:.4rem}
+@media (max-width:900px){.nav__links{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent);padding-right:1.4rem}}
 .nav__links::-webkit-scrollbar{display:none}
 .nav__links a{
-  font-family:var(--f-mono);font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;
-  color:var(--muted);white-space:nowrap;padding:.35rem 0;
-  border-bottom:1.5px solid transparent;
+  font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--muted);white-space:nowrap;padding:.4rem 0;border-bottom:1.5px solid transparent;
 }
-.nav__links a:hover{color:var(--ink);text-decoration:none;border-bottom-color:var(--accent)}
-@media (max-width:600px){.nav__mark{display:none}.nav__links{width:100%;justify-content:space-between}}
+.nav__links a:hover,.nav__links a.is-active{color:var(--ink);text-decoration:none;border-bottom-color:var(--accent)}
+.theme-btn{
+  flex:none;width:34px;height:34px;display:grid;place-items:center;border-radius:50%;
+  border:1px solid var(--rule);background:var(--surface);cursor:pointer;color:var(--ink-soft);
+}
+.theme-btn:hover{border-color:var(--accent);color:var(--accent)}
+.theme-btn svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round}
+.theme-btn .i-sun{display:none}
+:root[data-theme="dark"] .theme-btn .i-sun{display:block}
+:root[data-theme="dark"] .theme-btn .i-moon{display:none}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .theme-btn .i-sun{display:block}
+  :root:not([data-theme="light"]) .theme-btn .i-moon{display:none}
+}
+@media (max-width:640px){.nav__mark{display:none}.nav__links{margin-left:0;flex:1}}
 
 /* ── shared type ──────────────────────────────────────────────────── */
-.eyebrow{
-  font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--muted);margin:0;
-}
+.eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
 h1,h2,h3,h4{font-family:var(--f-display);font-weight:600;text-wrap:balance;margin:0;line-height:1.15}
 p{margin:0}
 .prose{max-width:var(--measure)}
 
-/* ── hero ─────────────────────────────────────────────────────────── */
-.hero{padding-block:clamp(3rem,9vw,6rem) clamp(2.5rem,6vw,4rem)}
-.hero__name{
-  font-size:clamp(2.6rem,8.5vw,5rem);
-  font-weight:700;letter-spacing:-.028em;line-height:1;
-  margin-bottom:1.1rem;
-}
-.hero__cols{
-  display:grid;align-items:start;
-  gap:clamp(1.5rem,4vw,3.5rem);
-  margin-top:clamp(1.6rem,3.5vw,2.4rem);
-}
-@media (min-width:900px){
-  .hero__cols{grid-template-columns:minmax(0,1.02fr) minmax(0,1fr);align-items:end}
-}
-.hero__thesis{
-  font-family:var(--f-display);font-weight:500;
-  font-size:clamp(1.35rem,3.3vw,2.05rem);
-  line-height:1.28;letter-spacing:-.016em;
-  max-width:20ch;margin:0;
-  color:var(--ink);
-}
-.hero__thesis em{font-style:normal;color:var(--accent)}
-.hero__lede{
-  color:var(--ink-soft);max-width:56ch;font-size:1.03rem;margin:0;
-  padding-left:clamp(0rem,1.5vw,1.4rem);
-  border-left:1px solid var(--rule);
-}
-@media (max-width:899px){.hero__lede{border-left:0;padding-left:0}}
-
-/* spec strip */
-.spec{
-  display:grid;gap:0;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  border-top:1px solid var(--rule);
-  margin-top:clamp(2.2rem,5vw,3.2rem);
-}
-.spec__cell{
-  padding:1rem 1.1rem 1.1rem 0;
-  border-bottom:1px solid var(--rule-soft);
-}
-.spec__k{
-  font-family:var(--f-mono);font-size:.67rem;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--muted);display:block;margin-bottom:.4rem;
-}
-.spec__v{
-  font-family:var(--f-display);font-weight:500;font-size:.98rem;line-height:1.35;
-  font-variant-numeric:tabular-nums;color:var(--ink);
-}
-
-/* ── contact chips ────────────────────────────────────────────────── */
-.chips{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:2rem;align-items:center}
+/* ── buttons & chips ─────────────────────────────────────────────── */
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
 .chip{
-  display:inline-flex;align-items:center;gap:.5rem;
-  font-family:var(--f-mono);font-size:.78rem;letter-spacing:.02em;
-  padding:.5rem .85rem;border:1px solid var(--rule);border-radius:2px;
+  display:inline-flex;align-items:center;gap:.5rem;cursor:pointer;
+  font-family:var(--f-mono);font-size:.78rem;letter-spacing:.02em;line-height:1.2;
+  padding:.55rem .85rem;border:1px solid var(--rule);border-radius:3px;
   color:var(--ink-soft);background:var(--surface);
-  transition:border-color .15s ease,color .15s ease;
+  transition:border-color .15s ease,color .15s ease,background .15s ease,transform .15s ease;
 }
 .chip:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
-.chip--solid{background:var(--accent);border-color:var(--accent);color:var(--paper);font-weight:500}
-:root[data-theme="dark"] .chip--solid,
-:root:not([data-theme="light"]) .chip--solid{color:#0E1317}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .chip--solid{color:#FFFFFF}}
-.chip--solid:hover{color:var(--paper);opacity:.88;text-decoration:none;border-color:var(--accent)}
-.chip svg{width:14px;height:14px;flex:none;stroke:currentColor;fill:none;stroke-width:1.6}
+.chip:active{transform:translateY(1px)}
+.chip--solid{background:var(--accent);border-color:var(--accent);color:var(--on-accent);font-weight:500}
+.chip--solid:hover{color:var(--on-accent);opacity:.9}
+.chip svg{width:14px;height:14px;flex:none;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 
-/* ── approach sequence ────────────────────────────────────────────── */
-.loop{
-  border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);
-  padding-block:1.6rem;margin-top:clamp(2.4rem,5vw,3.4rem);
+.badge{
+  display:inline-flex;align-items:center;gap:.4rem;
+  font-family:var(--f-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;font-weight:500;
+  padding:.28rem .55rem;border-radius:99px;white-space:nowrap;
+  background:var(--surface-sunk);color:var(--ink-soft);
 }
-.loop__label{margin-bottom:1.1rem}
-.loop__steps{
-  list-style:none;margin:0;padding:0;
-  display:flex;flex-wrap:wrap;gap:.45rem .3rem;align-items:baseline;
+.badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.85}
+.badge--live{background:var(--ok-soft);color:var(--ok)}
+.badge--wip{background:var(--warn-soft);color:var(--warn)}
+.badge--done{background:var(--accent-soft);color:var(--accent)}
+.badge--plan{background:var(--surface-sunk);color:var(--muted)}
+
+/* ── hero ─────────────────────────────────────────────────────────── */
+.hero{padding-block:clamp(2.2rem,7vw,5rem) clamp(2rem,5vw,3rem)}
+.hero__grid{display:grid;gap:clamp(1.6rem,4vw,3.5rem);align-items:center}
+@media (min-width:900px){.hero__grid{grid-template-columns:minmax(0,1fr) minmax(260px,320px)}}
+.hero__name{
+  font-size:clamp(2.5rem,8vw,4.8rem);font-weight:700;letter-spacing:-.028em;line-height:1;
+  margin:.9rem 0 1rem;
 }
-.loop__steps li{
-  font-family:var(--f-mono);font-size:.8rem;color:var(--ink-soft);
-  display:inline-flex;align-items:baseline;gap:.3rem;
+.hero__roles{
+  font-family:var(--f-display);font-weight:500;font-size:clamp(1.15rem,2.8vw,1.6rem);
+  letter-spacing:-.01em;color:var(--ink-soft);line-height:1.3;margin-bottom:1.2rem;
 }
+.rot{color:var(--accent);display:inline-block;transition:opacity .35s ease,transform .35s ease}
+.rot.out{opacity:0;transform:translateY(6px)}
+.hero__lede{color:var(--ink-soft);max-width:60ch;font-size:1.03rem;margin-bottom:1.5rem}
+.hero__lede strong{color:var(--ink);font-weight:600}
+.status{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;color:var(--ok);
+  background:var(--ok-soft);padding:.35rem .7rem;border-radius:99px;
+}
+.status__dot{width:8px;height:8px;border-radius:50%;background:var(--ok);position:relative}
+.status__dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:2px solid var(--ok);opacity:0;animation:ping 2.2s ease-out infinite}
+@keyframes ping{0%{opacity:.6;transform:scale(.6)}100%{opacity:0;transform:scale(1.6)}}
+@media (prefers-reduced-motion:reduce){.status__dot::after{animation:none}}
+
+.portrait{position:relative;margin:0;justify-self:start;width:min(100%,320px)}
+@media (max-width:899px){.portrait{order:-1;width:min(42%,160px)}.portrait::before{inset:9px -9px -9px 9px}}
+.portrait__frame{
+  position:relative;border-radius:6px;overflow:hidden;
+  border:1px solid var(--rule);background:var(--surface-sunk);box-shadow:var(--shadow);
+  aspect-ratio:4/5;
+}
+.portrait__frame img{width:100%;height:100%;object-fit:cover}
+.portrait::before{
+  content:"";position:absolute;inset:14px -14px -14px 14px;border:1.5px solid var(--accent);border-radius:6px;z-index:-1;opacity:.55;
+}
+.portrait__tag{
+  position:absolute;left:-10px;bottom:18px;
+  background:var(--surface);border:1px solid var(--rule);border-left:3px solid var(--accent);
+  padding:.45rem .7rem;box-shadow:var(--shadow);border-radius:3px;
+  font-family:var(--f-mono);font-size:.68rem;line-height:1.35;color:var(--ink-soft);
+}
+.portrait__tag b{display:block;color:var(--ink);font-family:var(--f-display);font-size:.8rem;font-weight:600}
+@media (max-width:899px){.portrait__tag{display:none}}
+
+/* stats */
+.stats{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  border-top:1px solid var(--rule);margin-top:clamp(2rem,5vw,3rem);
+}
+.stat{padding:1rem 1rem 1.1rem 0;border-bottom:1px solid var(--rule-soft)}
+.stat__v{display:block;font-family:var(--f-display);font-weight:700;font-size:clamp(1.5rem,3.4vw,2rem);letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat__v small{font-size:.5em;font-weight:500;color:var(--muted);letter-spacing:0}
+.stat__k{font-family:var(--f-mono);font-size:.67rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-top:.35rem}
+
+/* approach loop */
+.loop{border-bottom:1px solid var(--rule);padding-block:1.4rem}
+.loop__label{margin-bottom:.9rem}
+.loop__steps{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.45rem .3rem;align-items:baseline}
+.loop__steps li{font-family:var(--f-mono);font-size:.8rem;color:var(--ink-soft);display:inline-flex;align-items:baseline;gap:.3rem}
 .loop__steps li::after{content:"→";color:var(--accent);margin-left:.35rem;opacity:.75}
 .loop__steps li:last-child::after{content:""}
 .loop__n{color:var(--muted);font-size:.68rem}
 
 /* ── sections ─────────────────────────────────────────────────────── */
 .sec{padding-block:clamp(3rem,7vw,5rem);border-top:1px solid var(--rule)}
-.sec__head{
-  display:flex;align-items:baseline;justify-content:space-between;gap:1rem;
-  margin-bottom:clamp(1.8rem,4vw,2.8rem);flex-wrap:wrap;
-}
+.sec--first{border-top:0}
+.sec__head{display:flex;align-items:baseline;justify-content:space-between;gap:.6rem 1rem;margin-bottom:clamp(1.6rem,4vw,2.6rem);flex-wrap:wrap}
 .sec__title{font-size:clamp(1.5rem,3.4vw,2.05rem);letter-spacing:-.018em}
 .sec__note{font-family:var(--f-mono);font-size:.72rem;color:var(--muted);letter-spacing:.06em}
 
-/* group label inside projects */
-.grp{
-  font-family:var(--f-mono);font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--muted);padding-bottom:.7rem;border-bottom:1px solid var(--rule);
-  margin-bottom:2rem;
+/* ── featured: HydroSense ────────────────────────────────────────── */
+.feature{
+  background:var(--surface);border:1px solid var(--rule);border-radius:8px;
+  padding:clamp(1.2rem,4vw,2.6rem);box-shadow:var(--shadow);
 }
-.grp:not(:first-of-type){margin-top:clamp(2.5rem,5vw,3.5rem)}
-
-/* ── datasheet entry (project / job / school) ─────────────────────── */
-.entry{
-  display:grid;
-  grid-template-columns:minmax(190px,240px) minmax(0,1fr);
-  gap:clamp(1rem,3vw,3rem);
-  padding-block:clamp(1.6rem,3.5vw,2.4rem);
-  border-bottom:1px solid var(--rule-soft);
+.feature__top{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:1rem}
+.feature__title{font-size:clamp(1.6rem,4.2vw,2.5rem);letter-spacing:-.022em;line-height:1.08;margin-bottom:.4rem}
+.feature__tag{font-family:var(--f-display);font-weight:500;color:var(--water);font-size:clamp(1rem,2.2vw,1.2rem);margin-bottom:1.2rem}
+.feature__grid{display:grid;gap:clamp(1.4rem,4vw,2.8rem)}
+@media (min-width:920px){.feature__grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr)}}
+.feature__sum{color:var(--ink-soft);margin-bottom:1.2rem}
+.role{
+  display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.2rem;
 }
-.entry:last-child{border-bottom:0}
-@media (max-width:760px){
-  .entry{grid-template-columns:1fr;gap:.9rem}
-}
-.rail{display:flex;flex-direction:column;gap:.55rem}
-.rail__kind{
-  font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--accent);font-weight:500;line-height:1.45;
-}
-.rail__meta{
-  font-family:var(--f-mono);font-size:.73rem;color:var(--muted);line-height:1.55;
-  font-variant-numeric:tabular-nums;
-}
-.rail__meta span{display:block}
-
-.body__title{font-size:clamp(1.15rem,2.4vw,1.42rem);letter-spacing:-.012em;margin-bottom:.7rem}
-.body__sum{color:var(--ink-soft);max-width:var(--measure);margin-bottom:1.1rem}
-.did{
-  list-style:none;margin:0 0 1.2rem;padding:0;
-  display:flex;flex-direction:column;gap:.6rem;max-width:var(--measure);
-}
-.did li{position:relative;padding-left:1.15rem;color:var(--ink);font-size:.97rem;line-height:1.55}
-.did li::before{
-  content:"";position:absolute;left:0;top:.62em;
-  width:5px;height:1.5px;background:var(--accent);
-}
+.role span{font-family:var(--f-mono);font-size:.72rem;padding:.3rem .6rem;border-radius:3px;background:var(--accent-soft);color:var(--accent-ink)}
+:root[data-theme="dark"] .role span{color:var(--accent-ink)}
+.did{list-style:none;margin:0 0 1.2rem;padding:0;display:flex;flex-direction:column;gap:.55rem;max-width:var(--measure)}
+.did li{position:relative;padding-left:1.15rem;color:var(--ink);font-size:.96rem;line-height:1.55}
+.did li::before{content:"";position:absolute;left:0;top:.66em;width:6px;height:1.5px;background:var(--accent)}
 .did strong{font-weight:600;font-family:var(--f-display);font-size:.95em}
+.feature__cta{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.4rem}
 
-.tools{display:flex;flex-wrap:wrap;gap:.35rem}
-.tool{
-  font-family:var(--f-mono);font-size:.7rem;letter-spacing:.02em;
-  color:var(--ink-soft);background:var(--surface-sunk);
-  padding:.28rem .5rem;border-radius:2px;
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:6px;overflow:hidden;margin-block:1.6rem}
+.kpi{background:var(--surface);padding:.85rem .9rem}
+.kpi b{display:block;font-family:var(--f-display);font-size:1.35rem;font-weight:700;letter-spacing:-.015em;font-variant-numeric:tabular-nums}
+.kpi span{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.kpi--note b::after{content:"*";color:var(--warn);margin-left:1px}
+.fine{font-family:var(--f-mono);font-size:.7rem;color:var(--muted);line-height:1.5}
+
+/* tabs: how it works */
+.how{border:1px solid var(--rule);border-radius:6px;overflow:hidden;background:var(--paper)}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--rule)}
+.tab{
+  background:none;border:0;border-right:1px solid var(--rule);cursor:pointer;
+  padding:.75rem .4rem;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);
+  display:flex;flex-direction:column;align-items:center;gap:.25rem;
 }
+.tab:last-child{border-right:0}
+.tab b{font-family:var(--f-display);font-size:1rem;color:var(--ink-soft);letter-spacing:0;text-transform:none;font-weight:600}
+.tab[aria-selected="true"]{background:var(--surface);color:var(--accent);box-shadow:inset 0 -2px 0 var(--accent)}
+.tab[aria-selected="true"] b{color:var(--accent)}
+.tab:hover{color:var(--ink)}
+.panel{padding:1rem 1.1rem 1.15rem;font-size:.95rem;color:var(--ink-soft);min-height:8.5rem}
+.panel h4{font-size:1rem;color:var(--ink);margin-bottom:.35rem}
+
+/* decision demo */
+.demo{border:1px solid var(--rule);border-radius:6px;padding:1.1rem;background:var(--paper);margin-top:1.2rem}
+.demo__head{display:flex;justify-content:space-between;gap:.6rem;align-items:baseline;flex-wrap:wrap;margin-bottom:.9rem}
+.demo__head h4{font-size:1rem}
+.zone{display:grid;grid-template-columns:5rem minmax(0,1fr) 2.8rem;align-items:center;gap:.6rem;margin-bottom:.7rem}
+.zone__name{font-family:var(--f-mono);font-size:.72rem;color:var(--ink-soft);display:flex;flex-direction:column;line-height:1.2}
+.zone__rank{font-size:.62rem;color:var(--water);letter-spacing:.06em;text-transform:uppercase;min-height:1em}
+.zone__track{position:relative}
+.zone__bar{height:10px;border-radius:99px;background:color-mix(in srgb,var(--soil) 45%,var(--surface-sunk));position:relative;overflow:hidden}
+.zone__fill{position:absolute;inset:0 auto 0 0;background:var(--water);border-radius:99px;transition:width .25s ease}
+.zone__th{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--warn);border-radius:2px}
+.zone input[type=range]{position:absolute;inset:-8px 0;width:100%;opacity:0;cursor:pointer;margin:0;height:26px}
+.zone input[type=range]:focus-visible + .zone__bar{outline:2px solid var(--accent);outline-offset:3px}
+.zone output{font-family:var(--f-mono);font-size:.78rem;font-variant-numeric:tabular-nums;text-align:right;color:var(--ink)}
+.zone.is-dry .zone__name{color:var(--ink)}
+.switch{display:inline-flex;align-items:center;gap:.55rem;cursor:pointer;font-family:var(--f-mono);font-size:.74rem;color:var(--ink-soft);margin:.3rem 0 .9rem}
+.switch input{appearance:none;-webkit-appearance:none;width:34px;height:20px;border-radius:99px;background:var(--rule);position:relative;cursor:pointer;transition:background .2s;margin:0}
+.switch input::after{content:"";position:absolute;top:3px;left:3px;width:14px;height:14px;border-radius:50%;background:var(--surface);transition:transform .2s}
+.switch input:checked{background:var(--water)}
+.switch input:checked::after{transform:translateX(14px)}
+.out{display:flex;gap:.8rem;align-items:flex-start;padding:.8rem .9rem;border-radius:5px;background:var(--surface);border:1px solid var(--rule-soft)}
+.pump{flex:none;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .5rem;border-radius:3px;font-weight:500}
+.pump--on{background:var(--ok-soft);color:var(--ok)}
+.pump--off{background:var(--surface-sunk);color:var(--muted)}
+.pump--rain{background:var(--accent-soft);color:var(--accent)}
+.out p{font-size:.92rem;color:var(--ink);line-height:1.5}
+
+/* browser preview */
+.browser{border:1px solid var(--rule);border-radius:8px;overflow:hidden;background:var(--surface);margin-top:clamp(1.6rem,4vw,2.4rem)}
+.browser__bar{display:flex;align-items:center;gap:.7rem;padding:.55rem .8rem;border-bottom:1px solid var(--rule);background:var(--surface-sunk)}
+.browser__dots{display:flex;gap:5px;flex:none}
+.browser__dots i{width:9px;height:9px;border-radius:50%;background:var(--rule)}
+.browser__url{flex:1;min-width:0;font-family:var(--f-mono);font-size:.72rem;color:var(--muted);background:var(--surface);border:1px solid var(--rule-soft);border-radius:99px;padding:.25rem .75rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.browser__open{font-family:var(--f-mono);font-size:.72rem;white-space:nowrap}
+.browser__view{height:clamp(420px,62vh,600px);display:grid;place-items:center;text-align:center;padding:1.5rem;
+  background:
+    radial-gradient(circle at 20% 20%,color-mix(in srgb,var(--water) 14%,transparent),transparent 55%),
+    radial-gradient(circle at 80% 80%,color-mix(in srgb,var(--ok) 12%,transparent),transparent 55%),
+    var(--surface)}
+.browser__view.has-frame{padding:0;display:block}
+.browser__view iframe{width:100%;height:100%;border:0;display:block;background:#fff}
+.browser__msg{max-width:36ch}
+.browser__msg h4{font-size:1.2rem;margin-bottom:.4rem}
+.browser__msg p{color:var(--ink-soft);font-size:.95rem;margin-bottom:1rem}
+
+/* ── timeline: recent work ───────────────────────────────────────── */
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:7.6rem;top:.4rem;bottom:.4rem;width:1px;background:var(--rule)}
+.tl__item{display:grid;grid-template-columns:6.6rem minmax(0,1fr);gap:2rem;padding-block:.95rem;position:relative}
+.tl__item::before{content:"";position:absolute;left:calc(7.6rem - 5px);top:1.35rem;width:11px;height:11px;border-radius:50%;background:var(--paper);border:2px solid var(--accent)}
+.tl__item:first-child::before{background:var(--accent)}
+.tl__date{font-family:var(--f-mono);font-size:.74rem;color:var(--muted);padding-top:.2rem;text-align:right;font-variant-numeric:tabular-nums;line-height:1.4}
+.tl__title{font-size:1.06rem;margin-bottom:.25rem;letter-spacing:-.008em}
+.tl__text{color:var(--ink-soft);font-size:.95rem;max-width:var(--measure)}
+.tl__link{font-family:var(--f-mono);font-size:.72rem;display:inline-block;margin-top:.35rem}
+@media (max-width:640px){
+  .tl::before{left:5px}
+  .tl__item{grid-template-columns:1fr;gap:.2rem;padding-left:1.6rem}
+  .tl__item::before{left:0;top:1.2rem}
+  .tl__date{text-align:left}
+}
+
+/* ── projects ─────────────────────────────────────────────────────── */
+.filters{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem}
+.filter{
+  font-family:var(--f-mono);font-size:.74rem;padding:.45rem .8rem;border-radius:99px;cursor:pointer;
+  border:1px solid var(--rule);background:var(--surface);color:var(--ink-soft);
+}
+.filter:hover{border-color:var(--accent);color:var(--accent)}
+.filter[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.filter__n{opacity:.6;margin-left:.3rem}
+.skillnote{display:none;align-items:center;gap:.6rem;flex-wrap:wrap;font-family:var(--f-mono);font-size:.76rem;color:var(--ink-soft);margin-bottom:1rem;padding:.55rem .8rem;border-radius:4px;background:var(--accent-soft)}
+.skillnote.show{display:flex}
+.skillnote button{border:0;background:none;color:var(--accent);cursor:pointer;font-family:var(--f-mono);font-size:.76rem;text-decoration:underline;text-underline-offset:3px;padding:0}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));align-items:start}
+.card{
+  background:var(--surface);border:1px solid var(--rule);border-radius:6px;
+  padding:1.25rem 1.25rem 1.1rem;display:flex;flex-direction:column;
+  transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease;
+}
+.card:hover{border-color:color-mix(in srgb,var(--accent) 45%,var(--rule));box-shadow:var(--shadow);transform:translateY(-2px)}
+@media (prefers-reduced-motion:reduce){.card:hover{transform:none}}
+.card.is-hit{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.card__top{display:flex;justify-content:space-between;align-items:flex-start;gap:.6rem;margin-bottom:.7rem}
+.card__kind{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:500;line-height:1.4}
+.card__title{font-size:1.14rem;letter-spacing:-.01em;margin-bottom:.5rem;line-height:1.25}
+.card__sum{color:var(--ink-soft);font-size:.94rem;line-height:1.55;margin-bottom:.9rem}
+.card__meta{font-family:var(--f-mono);font-size:.7rem;color:var(--muted);margin-bottom:.9rem;line-height:1.5}
+.tools{display:flex;flex-wrap:wrap;gap:.3rem}
+.tool{font-family:var(--f-mono);font-size:.68rem;color:var(--ink-soft);background:var(--surface-sunk);padding:.25rem .48rem;border-radius:2px}
+.card__foot{margin-top:auto;padding-top:.9rem;display:flex;justify-content:space-between;align-items:center;gap:.6rem;flex-wrap:wrap}
+.more-btn{
+  border:0;background:none;cursor:pointer;padding:.3rem 0;
+  font-family:var(--f-mono);font-size:.74rem;color:var(--accent);display:inline-flex;align-items:center;gap:.35rem;
+}
+.more-btn svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
+.more-btn[aria-expanded="true"] svg{transform:rotate(45deg)}
+.card__link{font-family:var(--f-mono);font-size:.74rem}
+.card__more{border-top:1px solid var(--rule-soft);margin-top:.9rem;padding-top:.9rem}
+.card__more .did{margin:0}
+.card__more .did li{font-size:.9rem}
+.empty{display:none;color:var(--muted);font-family:var(--f-mono);font-size:.8rem;padding:1rem 0}
+.empty.show{display:block}
+
+/* ── datasheet entry (experience / education) ────────────────────── */
+.entry{display:grid;grid-template-columns:minmax(180px,230px) minmax(0,1fr);gap:clamp(1rem,3vw,3rem);padding-block:clamp(1.4rem,3vw,2.1rem);border-bottom:1px solid var(--rule-soft)}
+.entry:last-child{border-bottom:0}
+@media (max-width:760px){.entry{grid-template-columns:1fr;gap:.7rem}}
+.rail{display:flex;flex-direction:column;gap:.45rem}
+.rail__kind{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:500;line-height:1.45}
+.rail__meta{font-family:var(--f-mono);font-size:.73rem;color:var(--muted);line-height:1.55;font-variant-numeric:tabular-nums}
+.rail__meta span{display:block}
+.body__title{font-size:clamp(1.1rem,2.3vw,1.36rem);letter-spacing:-.012em;margin-bottom:.6rem}
+.body__sum{color:var(--ink-soft);max-width:var(--measure);margin-bottom:1rem}
+.nums{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;margin-bottom:1rem}
+.nums span{font-family:var(--f-mono);font-size:.74rem;color:var(--muted)}
+.nums b{font-family:var(--f-display);font-size:1.15rem;color:var(--ink);margin-right:.3rem;font-weight:700}
+
+.course-tabs{display:flex;gap:.4rem;flex-wrap:wrap;margin:.2rem 0 .8rem}
 
 /* ── skills ───────────────────────────────────────────────────────── */
-.skills{
-  display:grid;gap:0;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  border-top:1px solid var(--rule);
+.skills{display:grid;gap:0;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));border-top:1px solid var(--rule)}
+.skill{padding:1.3rem 1.4rem 1.4rem 0;border-bottom:1px solid var(--rule-soft)}
+.skill h3{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:500;margin-bottom:.75rem}
+.sk{display:flex;flex-wrap:wrap;gap:.35rem}
+.sk span,.sk button{
+  font-family:var(--f-mono);font-size:.74rem;padding:.32rem .6rem;border-radius:3px;line-height:1.3;
+  background:var(--surface);border:1px solid var(--rule-soft);color:var(--ink-soft);
 }
-.skill{
-  padding:1.4rem 1.6rem 1.5rem 0;
-  border-bottom:1px solid var(--rule-soft);
-}
-.skill h3{
-  font-family:var(--f-mono);font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--muted);font-weight:500;margin-bottom:.7rem;
-}
-.skill p{font-size:.97rem;color:var(--ink);line-height:1.55}
+.sk button{cursor:pointer;border-color:var(--rule);color:var(--ink)}
+.sk button::after{content:" ↗";color:var(--accent);font-size:.9em}
+.sk button:hover{border-color:var(--accent);color:var(--accent)}
+.skills__hint{font-family:var(--f-mono);font-size:.72rem;color:var(--muted);margin-bottom:1rem}
 
-/* ── closing ──────────────────────────────────────────────────────── */
+/* ── contact ──────────────────────────────────────────────────────── */
 .close__grid{display:grid;grid-template-columns:minmax(0,1fr);gap:clamp(1.6rem,4vw,2.4rem)}
 @media (min-width:860px){.close__grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}}
-.note{
-  background:var(--accent-soft);
-  border-left:2px solid var(--accent);
-  padding:1.2rem 1.4rem;
-  font-size:.97rem;color:var(--ink);
-}
+.note{background:var(--accent-soft);border-left:2px solid var(--accent);padding:1.2rem 1.4rem;font-size:.97rem;color:var(--ink)}
 .note p+p{margin-top:.7rem}
+.contact__lede{color:var(--ink-soft);margin-bottom:1.4rem}
+.looking{list-style:none;padding:0;margin:0 0 1.4rem;display:flex;flex-wrap:wrap;gap:.4rem}
+.looking li{font-family:var(--f-mono);font-size:.74rem;padding:.3rem .6rem;border:1px dashed var(--rule);border-radius:3px;color:var(--ink-soft)}
 
 /* ── footer ───────────────────────────────────────────────────────── */
-.foot{
-  border-top:1px solid var(--rule);
-  padding-block:1.8rem 2.4rem;
-  display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;
-  font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;color:var(--muted);
-}
+.foot{border-top:1px solid var(--rule);padding-block:1.8rem 2.4rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.06em;color:var(--muted)}
+
+/* ── toast / to-top ──────────────────────────────────────────────── */
+.toast{position:fixed;left:50%;bottom:1.4rem;transform:translate(-50%,calc(100% + 2rem));background:var(--ink);color:var(--paper);font-family:var(--f-mono);font-size:.78rem;padding:.6rem 1rem;border-radius:4px;z-index:70;transition:transform .3s ease,visibility 0s linear .3s;pointer-events:none;visibility:hidden}
+.toast.show{transform:translate(-50%,0);visibility:visible;transition:transform .3s ease}
+.totop{position:fixed;right:1rem;bottom:1rem;width:42px;height:42px;border-radius:50%;border:1px solid var(--rule);background:var(--surface);box-shadow:var(--shadow);cursor:pointer;display:grid;place-items:center;color:var(--ink-soft);opacity:0;pointer-events:none;transition:opacity .25s ease;z-index:55}
+.totop.show{opacity:1;pointer-events:auto}
+.totop:hover{color:var(--accent);border-color:var(--accent)}
+.totop svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
 
 /* ── reveal ───────────────────────────────────────────────────────── */
 .rv{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s ease}
 .rv.in{opacity:1;transform:none}
+.no-js .rv{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}}
 
 /* ── print / PDF ──────────────────────────────────────────────────── */
 @media print{
-  :root{
+  @page{size:A4;margin:14mm 13mm}
+  :root,:root[data-theme="dark"]{
     --paper:#FFFFFF;--surface:#FFFFFF;--surface-sunk:#F2F4F6;
-    --ink:#101418;--ink-soft:#2E3840;--muted:#5A6771;
+    --ink:#101418;--ink-soft:#2E3840;--muted:#56636D;
     --rule:#C9D0D5;--rule-soft:#DFE4E8;
-    --accent:#14506B;--accent-soft:#EEF3F6;
+    --accent:#14506B;--accent-soft:#EEF3F6;--accent-ink:#0E3D52;--on-accent:#fff;
+    --ok:#1D7348;--ok-soft:#E8F4EC;--warn:#8E5B00;--warn-soft:#F8F0E2;--water:#2C7DA0;
+    --shadow:none;
   }
-  body{background:#fff;font-size:9.3pt;line-height:1.42}
+  body{background:#fff;font-size:9.2pt;line-height:1.42}
   .wrap{max-width:none;padding-inline:0}
-  .nav{display:none}
+  .nav,.progress,.toast,.totop,.skip,.filters,.skillnote,.demo,.browser,.more-btn,.theme-btn,.how .tabs,.skills__hint,.course-tabs,.loop{display:none!important}
   .rv{opacity:1!important;transform:none!important}
-  .hero{padding-block:0 .5rem}
-  .hero__name{font-size:26pt;margin-bottom:.35rem}
-  .hero__cols{grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);align-items:start;gap:1.2rem;margin-top:.7rem}
-  .hero__thesis{font-size:12pt;max-width:24ch}
-  .hero__lede{font-size:9.3pt;max-width:none}
-  .spec{margin-top:.9rem}
-  .spec__cell{padding:.45rem .8rem .5rem 0}
-  .chips{margin-top:.8rem;gap:.35rem}
-  .chip{background:#fff!important;color:var(--ink-soft)!important;border-color:var(--rule);padding:.25rem .5rem;font-size:8pt}
-  .chip--solid{background:#fff!important;color:var(--ink)!important;border-color:var(--accent)}
-  .chip[href$=".pdf"],.chip svg{display:none}
-  .loop{margin-top:.9rem;padding-block:.7rem}
-  .loop__steps li{font-size:7.6pt}
-  .sec{padding-block:.85rem;break-inside:auto}
-  .sec__head{margin-bottom:.8rem}
-  .sec__title{font-size:14pt}
-  .grp{margin-bottom:.7rem;padding-bottom:.35rem}
-  .grp:not(:first-of-type){margin-top:1rem}
-  .entry{
-    break-inside:avoid;page-break-inside:avoid;
-    padding-block:.55rem;gap:1.1rem;
-    grid-template-columns:minmax(150px,168px) minmax(0,1fr);
-  }
-  .rail{gap:.25rem}
-  .rail__kind{font-size:7.8pt}
-  .rail__meta{font-size:7.8pt;line-height:1.4}
-  .body__title{font-size:11pt;margin-bottom:.35rem}
-  .body__sum{margin-bottom:.5rem;max-width:none}
-  .did{gap:.28rem;margin-bottom:.5rem;max-width:none}
-  .did li{font-size:9pt;line-height:1.4}
-  .tool{background:var(--surface-sunk)!important;font-size:7.4pt;padding:.15rem .35rem}
+  .hero{padding-block:0 .4rem}
+  .hero__grid{grid-template-columns:minmax(0,1fr) 3.6cm;gap:1rem;align-items:start}
+  .portrait{order:0;width:3.6cm}
+  .portrait::before,.portrait__tag{display:none}
+  .hero__name{font-size:24pt;margin:.3rem 0 .4rem}
+  .hero__roles{font-size:11pt;margin-bottom:.5rem}
+  .hero__lede{font-size:9.2pt;margin-bottom:.6rem;max-width:none}
+  .status{font-size:7.6pt;padding:.15rem .5rem}
+  .chips{gap:.3rem}
+  .chip{padding:.2rem .45rem;font-size:7.6pt;background:#fff!important;color:var(--ink-soft)!important}
+  .chip svg,.chip--copy{display:none}
+  .stats{margin-top:.7rem;grid-template-columns:repeat(5,1fr)}
+  .stat{padding:.35rem .6rem .4rem 0}
+  .stat__v{font-size:13pt}
+  .stat__k{font-size:6.8pt}
+  .sec{padding-block:.7rem;border-top:1px solid var(--rule)}
+  .sec__head{margin-bottom:.6rem}
+  .sec__title{font-size:13pt}
+  .feature{padding:0;border:0;box-shadow:none}
+  .feature__title{font-size:14pt}
+  .feature__tag{font-size:10pt;margin-bottom:.5rem}
+  .feature__grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:1rem}
+  .feature__cta{display:none}
+  .kpis{margin-block:.6rem;grid-template-columns:repeat(6,1fr)}
+  .kpi{padding:.35rem .5rem}.kpi b{font-size:11pt}.kpi span{font-size:6.6pt}
+  .how{border:0;background:none}
+  .panel,.panel[hidden]{display:block!important;padding:.15rem 0 .35rem;min-height:0;font-size:8.6pt}
+  .panel h4{font-size:9pt;margin-bottom:.1rem}
+  .did{gap:.22rem;margin-bottom:.45rem;max-width:none}
+  .did li{font-size:8.8pt;line-height:1.38}
+  .tl::before{left:5.2rem}
+  .tl__item{grid-template-columns:4.4rem minmax(0,1fr);gap:1.4rem;padding-block:.3rem;break-inside:avoid}
+  .tl__item::before{left:calc(5.2rem - 4px);top:.55rem;width:8px;height:8px}
+  .tl__date{font-size:7.4pt}
+  .tl__title{font-size:9.8pt}
+  .tl__text{font-size:8.6pt;max-width:none}
+  .tl__link{display:none}
+  .grid{grid-template-columns:1fr 1fr;gap:.5rem}
+  .card{padding:.6rem .7rem;break-inside:avoid;border-radius:3px}
+  .card[hidden]{display:flex!important}
+  .card__title{font-size:10pt;margin-bottom:.25rem}
+  .card__sum{font-size:8.5pt;margin-bottom:.4rem}
+  .card__meta{font-size:7.2pt;margin-bottom:.4rem}
+  .card__more,.card__more[hidden]{display:block!important;margin-top:.4rem;padding-top:.4rem}
+  .card__more .did li{font-size:8.2pt}
+  .card__foot{display:none}
+  .tool{font-size:6.8pt;padding:.1rem .3rem;background:var(--surface-sunk)!important}
+  .badge{font-size:6.4pt;padding:.1rem .4rem}
+  .entry{break-inside:avoid;padding-block:.5rem;gap:1rem;grid-template-columns:4.2cm minmax(0,1fr)}
+  .rail__kind,.rail__meta{font-size:7.6pt}
+  .body__title{font-size:10.4pt;margin-bottom:.3rem}
+  .body__sum{margin-bottom:.4rem;max-width:none}
+  .nums{margin-bottom:.4rem}.nums b{font-size:10pt}.nums span{font-size:7.4pt}
+  .course-panel,.course-panel[hidden]{display:flex!important;margin-bottom:.3rem}
   .skills{grid-template-columns:repeat(3,1fr)}
-  .skill{padding:.6rem 1rem .6rem 0}
-  .skill p{font-size:9pt}
-  .note{background:var(--accent-soft)!important;padding:.7rem .9rem;font-size:9pt}
-  .foot{padding-block:.7rem;font-size:7.6pt}
+  .skill{padding:.5rem .8rem .5rem 0}
+  .sk span,.sk button{font-size:7.2pt;padding:.1rem .35rem}
+  .sk button::after{content:""}
+  .note{padding:.6rem .8rem;font-size:8.8pt}
+  .looking li{font-size:7.4pt}
+  .foot{padding-block:.6rem;font-size:7.4pt}
   a{color:var(--ink)!important;text-decoration:none}
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 </style>
 </head>
-<body>
+<body class="no-js">
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
 <nav class="nav" aria-label="Sections">
   <div class="wrap nav__in">
-    <span class="nav__mark">Bahesty Monfared</span>
+    <a class="nav__mark" href="#top">Bahesty Monfared</a>
     <div class="nav__links">
-      <a href="#work">Work</a>
+      <a href="#hydrosense">HydroSense</a>
+      <a href="#recent">Recent</a>
+      <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
       <a href="#education">Education</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </div>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Switch between light and dark theme">
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></svg>
+    </button>
   </div>
 </nav>
 
-<header class="wrap hero">
-  <p class="eyebrow">Electrical &amp; Electronic Engineering &nbsp;·&nbsp; Dhaka, Bangladesh</p>
-  <h1 class="hero__name">Bahesty&nbsp;Monfared</h1>
+<!-- ══ HERO ═════════════════════════════════════════════════════════ -->
+<header class="wrap hero" id="top">
+  <div class="hero__grid">
+    <div>
+      <span class="status"><span class="status__dot" aria-hidden="true"></span>Open to internships &amp; entry-level roles</span>
+      <h1 class="hero__name">Bahesty&nbsp;Monfared</h1>
+      <p class="hero__roles">
+        <span class="sr-only">Electrical and electronic engineering student: building embedded IoT systems, leading a capstone team, shipping bilingual apps, sizing solar power systems, writing clear technical documents and teaching.</span>
+        <span aria-hidden="true">Engineer in the making, <span class="rot" id="rot">building embedded IoT systems</span></span>
+      </p>
+      <p class="hero__lede">
+        Final-year BSc student in Electrical and Electronic Engineering at <strong>AIUB</strong>, graduating
+        December 2026. I lead <strong>HydroSense</strong>, a smart drip-irrigation system for terraced farms in
+        Bangladesh &mdash; I designed the system, wrote the ESP32 firmware, and built its bilingual app and website.
+        Before that, I spent years teaching, which is where I learned that a design is only finished when somebody
+        who wasn&rsquo;t in the room can follow it.
+      </p>
+      <div class="chips">
+        <a class="chip chip--solid" href="mailto:bahestymonfared@gmail.com">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3 6l9 6.5L21 6"/></svg>
+          bahestymonfared@gmail.com
+        </a>
+        <button class="chip chip--copy" type="button" data-copy="bahestymonfared@gmail.com" aria-label="Copy email address">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8.5" y="8.5" width="12" height="12" rx="2"/><path d="M15.5 8.5V5.5a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h3"/></svg>
+          Copy
+        </button>
+        <a class="chip" href="https://www.linkedin.com/in/bahesty-monfared-b4a6b926b" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10.5v6.5M7 7.2v.1M11.5 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/></svg>
+          LinkedIn
+        </a>
+        <a class="chip" href="https://github.com/BahestyMonfared" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.3-4-2-6-2.5m12 5v-3.4a3 3 0 0 0-.8-2.3c2.7-.3 5.5-1.3 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.5 2.1 5.5 2.4 5.5 2.4a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.1 8.8c0 4.6 2.8 5.6 5.5 6a3 3 0 0 0-.8 2.3V21.5"/></svg>
+          GitHub
+        </a>
+        <a class="chip" href="tel:+8801834211666">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5z"/></svg>
+          +880 1834-211666
+        </a>
+        <a class="chip" href="Bahesty_Monfared_Portfolio.pdf" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11m0 0l-4-4m4 4l4-4M4.5 18.5h15"/></svg>
+          Portfolio PDF
+        </a>
+      </div>
+    </div>
 
-  <div class="hero__cols">
-    <p class="hero__thesis">I build things I don&rsquo;t yet know how to build &mdash; then <em>write down how they work.</em></p>
-
-    <p class="hero__lede">
-      Final-year BSc student in Electrical and Electronic Engineering at AIUB. Most of my work sits where
-      hardware meets software: an ESP32 driving a real pump, a solar array that has to hand over to the grid
-      cleanly, a dataset that has to be cleaned before it can tell you anything. Alongside that, I have spent
-      several years teaching &mdash; which is where I learned that a design is only finished when somebody who
-      wasn&rsquo;t in the room can follow it.
-    </p>
+    <figure class="portrait">
+      <div class="portrait__frame">
+        <img src="bahesty-monfared.jpg" alt="Portrait of Bahesty Monfared" width="640" height="800" fetchpriority="high">
+      </div>
+      <figcaption class="portrait__tag"><b>Team Leader</b>HydroSense &middot; AIUB Group 11</figcaption>
+    </figure>
   </div>
 
-  <div class="spec">
-    <div class="spec__cell"><span class="spec__k">Degree</span><span class="spec__v">BSc, Electrical &amp; Electronic Engineering</span></div>
-    <div class="spec__cell"><span class="spec__k">Institution</span><span class="spec__v">American International University&ndash;Bangladesh</span></div>
-    <div class="spec__cell"><span class="spec__k">Expected graduation</span><span class="spec__v">December 2026</span></div>
-    <div class="spec__cell"><span class="spec__k">CGPA</span><span class="spec__v">3.38 / 4.00</span></div>
-  </div>
-
-  <div class="chips">
-    <a class="chip chip--solid" href="mailto:bahestymonfared@gmail.com">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3 6l9 6.5L21 6"/></svg>
-      bahestymonfared@gmail.com
-    </a>
-    <a class="chip" href="https://www.linkedin.com/in/bahesty-monfared-b4a6b926b" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M7 10.5v6.5M7 7.2v.1M11.5 17v-3.6a2.4 2.4 0 0 1 4.8 0V17"/></svg>
-      LinkedIn
-    </a>
-    <a class="chip" href="tel:+8801834211666">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5z"/></svg>
-      +880 1834-211666
-    </a>
-    <a class="chip" href="Bahesty_Monfared_Portfolio.pdf" download>
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11m0 0l-4-4m4 4l4-4M4.5 18.5h15"/></svg>
-      Download portfolio (PDF)
-    </a>
+  <div class="stats" aria-label="At a glance">
+    <div class="stat"><span class="stat__v"><span data-count="3.38" data-decimals="2">3.38</span><small> / 4.00</small></span><span class="stat__k">CGPA, BSc EEE</span></div>
+    <div class="stat"><span class="stat__v"><span data-count="100">100</span>+</span><span class="stat__k">Students taught</span></div>
+    <div class="stat"><span class="stat__v"><span data-count="50">50</span>+</span><span class="stat__k">Volunteers trained</span></div>
+    <div class="stat"><span class="stat__v"><span data-count="9">9</span></span><span class="stat__k">Projects on this page</span></div>
+    <div class="stat"><span class="stat__v">Dec&nbsp;2026</span><span class="stat__k">Graduation</span></div>
   </div>
 
   <div class="loop">
@@ -424,207 +628,409 @@ p{margin:0}
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main">
 
-<!-- ══ WORK ══════════════════════════════════════════════════════ -->
-<section class="sec rv" id="work">
+<!-- ══ FEATURED: HYDROSENSE ════════════════════════════════════════ -->
+<section class="sec sec--first rv" id="hydrosense">
   <div class="sec__head">
-    <h2 class="sec__title">Selected work</h2>
-    <p class="sec__note">Six projects &nbsp;·&nbsp; 2024&ndash;2026</p>
+    <h2 class="sec__title">Featured project</h2>
+    <p class="sec__note">Final-year capstone &middot; AIUB EEE &middot; Group 11</p>
   </div>
 
-  <p class="grp">Engineering &amp; hardware</p>
-
-  <article class="entry">
-    <div class="rail">
-      <p class="rail__kind">Final-year capstone</p>
-      <p class="rail__meta">
-        <span>AIUB, Faculty of Engineering</span>
-        <span>Role: sensing, control &amp; firmware</span>
-        <span>Status: built and defended</span>
-      </p>
+  <article class="feature">
+    <div class="feature__top">
+      <span class="badge badge--live">Website live</span>
+      <span class="badge badge--wip">Hardware build in progress</span>
+      <span class="badge badge--plan">Supervisor: Assoc. Prof. Rethwan Faiz</span>
     </div>
-    <div>
-      <h3 class="body__title">HydroSense &mdash; IoT smart irrigation system</h3>
-      <p class="body__sum">
-        An automated irrigation controller for small farms. Soil moisture and flow sensors feed an ESP32,
-        which drives the pump zone by zone instead of running on a fixed timer. It reports over GSM so it
-        works on land with no Wi&#8209;Fi, and the interface is a bilingual progressive web app &mdash; a farmer
-        can use it on a low-end phone with a weak connection.
-      </p>
-      <ul class="did">
-        <li><strong>Designed the sensing and control side</strong> &mdash; soil moisture and flow sensor integration, relay-driven pump control, and the zone logic that decides when to water.</li>
-        <li><strong>Wrote the ESP32 firmware</strong> and dealt with the electrical problems that only appear once a real pump is attached, including separating the pump supply from the control electronics so the board stopped resetting on pump start-up.</li>
-        <li><strong>Taught myself progressive web app development from scratch</strong> &mdash; offline caching, an installable interface, and a bilingual layout for users who don&rsquo;t read English. None of that is in an EEE syllabus.</li>
-        <li><strong>Wrote the capstone defence book</strong> documenting the design decisions, the test results, and the reasoning behind each one.</li>
-      </ul>
-      <div class="tools">
-        <span class="tool">ESP32</span><span class="tool">Soil moisture &amp; flow sensors</span><span class="tool">GSM module</span>
-        <span class="tool">Relay control</span><span class="tool">C / C++</span><span class="tool">HTML / CSS / JS (PWA)</span>
+    <h3 class="feature__title">HydroSense &mdash; smart drip irrigation for terraced farms</h3>
+    <p class="feature__tag">Every drop, right where the roots need it.</p>
+
+    <div class="feature__grid">
+      <div>
+        <p class="feature__sum">
+          On sloped and terraced land, water runs off before it can soak in. HydroSense reads soil moisture in three
+          separate zones, checks the weather forecast, and waters the driest zone first in short pulses &mdash; so the
+          water goes into the soil instead of down the hill. The ESP32 makes every watering decision itself, so the
+          farm keeps working when the internet drops; the cloud only gives advice.
+        </p>
+        <div class="role" aria-label="My role"><span>Team Leader</span><span>App Developer</span><span>System Designer</span></div>
+        <ul class="did">
+          <li><strong>Led the four-member student team</strong> and designed the system architecture the rest of the build follows.</li>
+          <li><strong>Wrote the ESP32 firmware</strong> (Arduino C++) &mdash; a 60-second control loop, driest-zone-first scheduling, and pulse and volume caps that keep water below the soil&rsquo;s soak-in rate.</li>
+          <li><strong>Built the bilingual app</strong> in English and &#2476;&#2494;&#2434;&#2482;&#2494; with Capacitor, synced through Firebase and shared as an Android APK.</li>
+          <li><strong>Produced the hardware design pack</strong> &mdash; a Rev C bill of materials, an 8-page circuit diagram covering 7 subsystems, a connection manual, and an interconnection design that fixed a 5&nbsp;V / 3.3&nbsp;V I&sup2;C clash with a BSS138 level shifter.</li>
+          <li><strong>Built the project website</strong> with a live decision-logic console, and wrote the engineering write-up and capstone book chapters.</li>
+        </ul>
+        <div class="tools">
+          <span class="tool">ESP32</span><span class="tool">ADS1115 16-bit ADC</span><span class="tool">Capacitive moisture probes</span>
+          <span class="tool">Hall-effect flow sensors</span><span class="tool">DHT22</span><span class="tool">MOSFET PWM + relay</span>
+          <span class="tool">Firebase</span><span class="tool">Open-Meteo API</span><span class="tool">Capacitor</span><span class="tool">FAO-56</span>
+        </div>
+        <div class="feature__cta">
+          <a class="chip chip--solid" href="https://bahestymonfared.github.io/hydrosense/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4.5h5.5V10M19.5 4.5L11 13M17 14v4.5a1 1 0 0 1-1 1H5.5a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1H10"/></svg>
+            Visit the HydroSense website
+          </a>
+          <a class="chip" href="#recent">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+            Latest progress
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="how">
+          <div class="tabs" role="tablist" aria-label="How HydroSense works">
+            <button class="tab" role="tab" id="t-sense" aria-controls="p-sense" aria-selected="true"><span>01</span><b>Sense</b></button>
+            <button class="tab" role="tab" id="t-decide" aria-controls="p-decide" aria-selected="false" tabindex="-1"><span>02</span><b>Decide</b></button>
+            <button class="tab" role="tab" id="t-water" aria-controls="p-water" aria-selected="false" tabindex="-1"><span>03</span><b>Water</b></button>
+            <button class="tab" role="tab" id="t-sync" aria-controls="p-sync" aria-selected="false" tabindex="-1"><span>04</span><b>Learn</b></button>
+          </div>
+          <div class="panel" role="tabpanel" id="p-sense" aria-labelledby="t-sense">
+            <h4>Sense</h4>
+            <p>Capacitive probes in each of the three zones are read through a 16-bit ADS1115 ADC, because the ESP32&rsquo;s own ADC2 can&rsquo;t be used while Wi&#8209;Fi is on. A DHT22 tracks temperature and humidity, and hall-effect flow sensors confirm how much water was actually delivered.</p>
+          </div>
+          <div class="panel" role="tabpanel" id="p-decide" aria-labelledby="t-decide" hidden>
+            <h4>Decide</h4>
+            <p>Every 60 seconds the ESP32 checks each zone against its dry threshold and looks at the live Open-Meteo forecast. If rain is on the way, it skips watering. If not, the driest zone goes first.</p>
+          </div>
+          <div class="panel" role="tabpanel" id="p-water" aria-labelledby="t-water" hidden>
+            <h4>Water</h4>
+            <p>A 12&nbsp;V diaphragm pump &mdash; switched by a MOSFET with a relay as a hardware enable &mdash; feeds pressure-compensating drip emitters. Short pulses with volume caps stop the water from running off the slope.</p>
+          </div>
+          <div class="panel" role="tabpanel" id="p-sync" aria-labelledby="t-sync" hidden>
+            <h4>Sync &amp; learn</h4>
+            <p>Readings sync to Firebase over a 4G router, and a 5-day FAO-56 water plan tunes itself to the field in about two weeks. The plan only advises: the ESP32 always applies the smaller of its own limit and the plan&rsquo;s target.</p>
+          </div>
+        </div>
+
+        <div class="demo" id="demo">
+          <div class="demo__head">
+            <h4>Try the decision rule</h4>
+            <span class="fine">Drag the soil moisture</span>
+          </div>
+          <div class="zone" data-zone="1">
+            <span class="zone__name">Zone 1<span class="zone__rank"></span></span>
+            <div class="zone__track">
+              <input type="range" min="10" max="45" value="34" aria-label="Zone 1 soil moisture, percent">
+              <div class="zone__bar"><span class="zone__fill"></span><span class="zone__th"></span></div>
+            </div>
+            <output>34%</output>
+          </div>
+          <div class="zone" data-zone="2">
+            <span class="zone__name">Zone 2<span class="zone__rank"></span></span>
+            <div class="zone__track">
+              <input type="range" min="10" max="45" value="21" aria-label="Zone 2 soil moisture, percent">
+              <div class="zone__bar"><span class="zone__fill"></span><span class="zone__th"></span></div>
+            </div>
+            <output>21%</output>
+          </div>
+          <div class="zone" data-zone="3">
+            <span class="zone__name">Zone 3<span class="zone__rank"></span></span>
+            <div class="zone__track">
+              <input type="range" min="10" max="45" value="27" aria-label="Zone 3 soil moisture, percent">
+              <div class="zone__bar"><span class="zone__fill"></span><span class="zone__th"></span></div>
+            </div>
+            <output>27%</output>
+          </div>
+          <label class="switch"><input type="checkbox" id="rain"> Rain in today&rsquo;s forecast</label>
+          <div class="out" aria-live="polite">
+            <span class="pump pump--on" id="pump">Pump on</span>
+            <p id="decision">Zone 2 first, then Zone 3.</p>
+          </div>
+          <p class="fine" style="margin-top:.7rem">Simplified illustration with a 30% dry threshold (orange line). The real controller also applies pulse and daily volume caps.</p>
+        </div>
       </div>
     </div>
-  </article>
 
-  <article class="entry">
-    <div class="rail">
-      <p class="rail__kind">Team project · Group 2026.2.7</p>
-      <p class="rail__meta">
-        <span>AIUB &nbsp;·&nbsp; four members</span>
-        <span>Role: embedded &amp; data pipeline</span>
-        <span>Prototype tested 19&ndash;27 Jul 2026</span>
-      </p>
+    <div class="kpis">
+      <div class="kpi"><b>3</b><span>Independent zones</span></div>
+      <div class="kpi"><b>60&nbsp;s</b><span>Control cycle</span></div>
+      <div class="kpi"><b>5-day</b><span>Water forecast</span></div>
+      <div class="kpi"><b>2</b><span>Languages</span></div>
+      <div class="kpi"><b>10&nbsp;yr</b><span>ERA5 climate data</span></div>
+      <div class="kpi kpi--note"><b>&asymp;71%</b><span>Less water</span></div>
     </div>
-    <div>
-      <h3 class="body__title">Hybrid solar&ndash;grid fast charging system with AI diagnostics</h3>
-      <p class="body__sum">
-        A charging system that draws from solar first and falls back to the grid, with MPPT tracking, a smart
-        battery management layer for protection, and a machine learning pipeline that flags faults from live
-        sensor data. An ESP32 acts as the edge node; a Raspberry&nbsp;Pi Zero&nbsp;2&nbsp;W runs the server and the model.
-        Built as a working prototype, then written up as a six-chapter project book.
-      </p>
-      <ul class="did">
-        <li><strong>Built the embedded side</strong> &mdash; ESP32 firmware split into sensing, control, display and network modules, reporting to the Raspberry Pi server.</li>
-        <li><strong>Owned the diagnostics dataset</strong> &mdash; 302,915 raw samples cleaned down to 301,696 usable ones, working through each cleaning decision rather than accepting the raw log as it came.</li>
-        <li><strong>Compared simulated behaviour against measured hardware</strong> and documented where the two disagreed and why, instead of reporting only the runs that matched.</li>
-        <li><strong>Produced the documentation</strong> &mdash; the six-chapter book, appendices of IC datasheets and source code, and a condensed IEEE-format summary paper drawn from it. Cleared plagiarism screening at 8% similarity with no integrity flags.</li>
-      </ul>
-      <div class="tools">
-        <span class="tool">ESP32</span><span class="tool">Raspberry Pi Zero 2 W</span><span class="tool">MPPT</span><span class="tool">BMS</span>
-        <span class="tool">Python</span><span class="tool">ML pipeline</span><span class="tool">C / C++</span>
+    <p class="fine">* From FAO-56 simulation runs. Bench and field tests are still under way, so this is not a measured result yet.</p>
+
+    <div class="browser" aria-label="Live preview of the HydroSense website">
+      <div class="browser__bar">
+        <span class="browser__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="browser__url">bahestymonfared.github.io/hydrosense</span>
+        <a class="browser__open" href="https://bahestymonfared.github.io/hydrosense/" target="_blank" rel="noopener">Open &#8599;</a>
       </div>
-    </div>
-  </article>
-
-  <article class="entry">
-    <div class="rail">
-      <p class="rail__kind">Course project · Renewable Energy Technology</p>
-      <p class="rail__meta">
-        <span>AIUB &nbsp;·&nbsp; group</span>
-        <span>Role: modelling &amp; sizing</span>
-        <span>Output: IEEE-format report</span>
-      </p>
-    </div>
-    <div>
-      <h3 class="body__title">Off-grid solar PV system design and simulation for Bangladesh</h3>
-      <p class="body__sum">
-        A full sizing and simulation study for a standalone solar installation under Bangladeshi irradiance and
-        load conditions, ending in a 2S&nbsp;&times;&nbsp;4P eight-module array configuration. The work covered load
-        estimation, panel and battery sizing, and modelling how the system would behave before any of it was built.
-      </p>
-      <ul class="did">
-        <li><strong>Modelled the array in MATLAB and Simulink</strong> and produced the I&ndash;V and P&ndash;V characteristics used to justify the chosen configuration.</li>
-        <li><strong>Worked the sizing calculations by hand first</strong> &mdash; irradiance, module output, series and parallel arrangement &mdash; so the simulation was checking my reasoning rather than replacing it.</li>
-        <li><strong>Wrote it up in IEEE format</strong>, which meant stating assumptions explicitly and citing a source for every figure I hadn&rsquo;t measured myself.</li>
-      </ul>
-      <div class="tools">
-        <span class="tool">MATLAB</span><span class="tool">Simulink</span><span class="tool">PV system sizing</span><span class="tool">IEEE technical writing</span>
-      </div>
-    </div>
-  </article>
-
-  <p class="grp">Research &amp; analysis</p>
-
-  <article class="entry">
-    <div class="rail">
-      <p class="rail__kind">Undergraduate thesis</p>
-      <p class="rail__meta">
-        <span>AIUB &nbsp;·&nbsp; group research</span>
-        <span>Role: dataset evaluation &amp; method design</span>
-        <span>Status: in progress</span>
-      </p>
-    </div>
-    <div>
-      <h3 class="body__title">Effect of colour and layout on user attention in web interfaces</h3>
-      <p class="body__sum">
-        A study of how visual design choices change where people actually look on a web page. Much of the work
-        was evaluating existing eye-tracking and saliency datasets against our requirements, then designing our
-        own experiments for the parts no dataset covered.
-      </p>
-      <ul class="did">
-        <li><strong>Evaluated published eye-tracking and saliency datasets</strong> &mdash; UEyes, Imp1k, FiWI &mdash; comparing what each one measured against what the study needed. That is a requirements-matching exercise before it is a research one.</li>
-        <li><strong>Helped design the experiments for the gaps</strong>: A/B testing, five-second memory tests, blur tests, distraction tests and side-by-side ranking.</li>
-        <li><strong>Worked in a field with no electrical engineering content at all</strong>, which meant reading unfamiliar literature and learning another discipline&rsquo;s vocabulary before I could contribute anything.</li>
-      </ul>
-      <div class="tools">
-        <span class="tool">Research methodology</span><span class="tool">Dataset evaluation</span><span class="tool">Experimental design</span><span class="tool">Literature review</span>
-      </div>
-    </div>
-  </article>
-
-  <article class="entry">
-    <div class="rail">
-      <p class="rail__kind">Coursework · Human&ndash;Computer Interaction</p>
-      <p class="rail__meta">
-        <span>AIUB</span>
-        <span>Role: sole author</span>
-        <span>Output: annotated presentation</span>
-      </p>
-    </div>
-    <div>
-      <h3 class="body__title">Usability analysis of the Steam desktop application</h3>
-      <p class="body__sum">
-        A structured evaluation of a large, widely used desktop application against Don Norman&rsquo;s design
-        principles &mdash; visibility, feedback, affordance, mapping, constraints and consistency &mdash; delivered as
-        an annotated presentation.
-      </p>
-      <ul class="did">
-        <li><strong>Judged a messy real interface against a fixed checklist</strong>, screen by screen, instead of offering a general opinion about whether the app was good.</li>
-        <li><strong>Annotated the evidence directly on screenshots</strong> so a reader could check the conclusion themselves rather than take my word for it.</li>
-      </ul>
-      <div class="tools">
-        <span class="tool">Usability heuristics</span><span class="tool">Structured evaluation</span><span class="tool">Annotated presentation</span>
-      </div>
-    </div>
-  </article>
-
-  <article class="entry">
-    <div class="rail">
-      <p class="rail__kind">Teaching material</p>
-      <p class="rail__meta">
-        <span>HSC ICT curriculum</span>
-        <span>Role: built from scratch</span>
-      </p>
-    </div>
-    <div>
-      <h3 class="body__title">Animated HTML &amp; web design lesson set</h3>
-      <p class="body__sum">
-        A teaching resource for the HSC ICT web design unit, built as an animated presentation with the
-        demonstrations coded rather than described &mdash; so students see the markup and the rendered result change
-        together instead of reading about it.
-      </p>
-      <div class="tools">
-        <span class="tool">HTML</span><span class="tool">CSS</span><span class="tool">PowerPoint animation</span><span class="tool">Curriculum design</span>
+      <div class="browser__view" id="hsView">
+        <div class="browser__msg">
+          <h4>See the real site, right here</h4>
+          <p>The HydroSense website has the full story, a live controller demo, the app download and the team.</p>
+          <button class="chip chip--solid" type="button" id="hsLoad">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg>
+            Load live preview
+          </button>
+        </div>
       </div>
     </div>
   </article>
 </section>
 
-<!-- ══ EXPERIENCE ════════════════════════════════════════════════ -->
+<!-- ══ RECENT WORK ═════════════════════════════════════════════════ -->
+<section class="sec rv" id="recent">
+  <div class="sec__head">
+    <h2 class="sec__title">Recent work</h2>
+    <p class="sec__note">Latest first &middot; Jul&ndash;Nov 2026</p>
+  </div>
+  <ol class="tl">
+    <li class="tl__item">
+      <time class="tl__date" datetime="2026-11-05">05 Nov 2026</time>
+      <div>
+        <h3 class="tl__title">PulseGuard proposal submitted</h3>
+        <p class="tl__text">A group project on embedded machine learning for physiological monitoring. Our group started on 15 October; the proposal went in on 5 November, and the build comes next.</p>
+        <a class="tl__link" href="#p-pulseguard" data-jump>View project &rarr;</a>
+      </div>
+    </li>
+    <li class="tl__item">
+      <time class="tl__date" datetime="2026-11">Nov 2026</time>
+      <div>
+        <h3 class="tl__title">HydroSense moves to 4G (Rev E)</h3>
+        <p class="tl__text">The SIM800L 2G module couldn&rsquo;t hold a secure (TLS) connection to Firebase, so the design switched to a 4G pocket router powered from the 5&nbsp;V rail.</p>
+        <a class="tl__link" href="#hydrosense">See HydroSense &rarr;</a>
+      </div>
+    </li>
+    <li class="tl__item">
+      <time class="tl__date" datetime="2026-10-31">31 Oct 2026</time>
+      <div>
+        <h3 class="tl__title">HydroSense hardware build begins</h3>
+        <p class="tl__text">Started putting the prototype together by testing each component on its own before connecting the full system.</p>
+        <a class="tl__link" href="#hydrosense">See HydroSense &rarr;</a>
+      </div>
+    </li>
+    <li class="tl__item">
+      <time class="tl__date" datetime="2026-10">Oct 2026</time>
+      <div>
+        <h3 class="tl__title">HydroSense Rev C hardware design pack</h3>
+        <p class="tl__text">Bill of materials, an 8-page circuit diagram covering 7 subsystems, a 4-page connection manual, and an interconnection design that solved a 5&nbsp;V / 3.3&nbsp;V I&sup2;C bus clash with a BSS138 level shifter.</p>
+        <a class="tl__link" href="#p-hydrosense" data-jump>View project &rarr;</a>
+      </div>
+    </li>
+    <li class="tl__item">
+      <time class="tl__date" datetime="2026-10">Oct 2026</time>
+      <div>
+        <h3 class="tl__title">Predictive water-demand engine</h3>
+        <p class="tl__text">A 5-day FAO-56 water plan for every zone that tunes itself to the field, plus a yearly demand curve from 10 years of ERA5 climate data &mdash; with a standalone demo and CSV export.</p>
+        <a class="tl__link" href="#p-forecast" data-jump>View project &rarr;</a>
+      </div>
+    </li>
+    <li class="tl__item">
+      <time class="tl__date" datetime="2026-09">Sep 2026</time>
+      <div>
+        <h3 class="tl__title">ParkTag smart parking designed</h3>
+        <p class="tl__text">An Arduino and NFC parking system with automatic billing in taka &mdash; proposal, full wiring diagram, and a costed component list.</p>
+        <a class="tl__link" href="#p-parktag" data-jump>View project &rarr;</a>
+      </div>
+    </li>
+    <li class="tl__item">
+      <time class="tl__date" datetime="2026-08">Aug 2026</time>
+      <div>
+        <h3 class="tl__title">Solar&ndash;grid project book and IEEE paper</h3>
+        <p class="tl__text">The project book cleared iThenticate at 8% similarity with no integrity flags. We then condensed it into a 6-page IEEE-format paper and prepared the final defence.</p>
+        <a class="tl__link" href="#p-solar" data-jump>View project &rarr;</a>
+      </div>
+    </li>
+    <li class="tl__item">
+      <time class="tl__date" datetime="2026-07">Jul 2026</time>
+      <div>
+        <h3 class="tl__title">Solar&ndash;grid prototype tested</h3>
+        <p class="tl__text">Recorded prototype data from 19 to 27 July. The team&rsquo;s diagnostics dataset reached 302,915 samples &mdash; 301,696 after cleaning.</p>
+        <a class="tl__link" href="#p-solar" data-jump>View project &rarr;</a>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- ══ PROJECTS ════════════════════════════════════════════════════ -->
+<section class="sec rv" id="projects">
+  <div class="sec__head">
+    <h2 class="sec__title">Projects</h2>
+    <p class="sec__note">Filter, or pick a skill below to see where I used it</p>
+  </div>
+
+  <div class="filters" role="group" aria-label="Filter projects">
+    <button class="filter" type="button" data-filter="all" aria-pressed="true">All<span class="filter__n"></span></button>
+    <button class="filter" type="button" data-filter="iot" aria-pressed="false">Embedded &amp; IoT<span class="filter__n"></span></button>
+    <button class="filter" type="button" data-filter="energy" aria-pressed="false">Energy<span class="filter__n"></span></button>
+    <button class="filter" type="button" data-filter="research" aria-pressed="false">Research &amp; HCI<span class="filter__n"></span></button>
+    <button class="filter" type="button" data-filter="teaching" aria-pressed="false">Teaching<span class="filter__n"></span></button>
+  </div>
+  <div class="skillnote" id="skillnote" aria-live="polite"><span id="skillnoteText"></span><button type="button" id="skillClear">Show all projects</button></div>
+
+  <div class="grid" id="grid">
+
+    <article class="card" id="p-hydrosense" data-cat="iot" data-tags="esp32 cpp js firebase capacitor sensors i2c matlab simulink fao56">
+      <div class="card__top"><p class="card__kind">Capstone &middot; Team leader</p><span class="badge badge--wip">Building</span></div>
+      <h3 class="card__title">HydroSense smart drip irrigation</h3>
+      <p class="card__sum">Three-zone, weather-aware drip irrigation for terraced farms, with a bilingual app and a live project website.</p>
+      <p class="card__meta">AIUB EEE &middot; Group 11 &middot; 2026</p>
+      <div class="tools"><span class="tool">ESP32</span><span class="tool">Arduino C++</span><span class="tool">Firebase</span><span class="tool">Capacitor</span><span class="tool">Simulink</span></div>
+      <div class="card__foot">
+        <a class="card__link" href="#hydrosense">Full story above &uarr;</a>
+        <a class="card__link" href="https://bahestymonfared.github.io/hydrosense/" target="_blank" rel="noopener">Live site &#8599;</a>
+      </div>
+    </article>
+
+    <article class="card" id="p-forecast" data-cat="iot" data-tags="js fao56">
+      <div class="card__top"><p class="card__kind">HydroSense &middot; Software module</p><span class="badge badge--done">Implemented</span></div>
+      <h3 class="card__title">Predictive water-demand engine</h3>
+      <p class="card__sum">Plans irrigation five days ahead and learns the field it is installed in &mdash; without ever taking control away from the controller.</p>
+      <p class="card__meta">JavaScript &middot; pure engine, no DOM or Firebase dependencies</p>
+      <div class="tools"><span class="tool">JavaScript</span><span class="tool">FAO-56</span><span class="tool">Open-Meteo</span><span class="tool">ERA5</span></div>
+      <div class="card__more" id="m-forecast" hidden>
+        <ul class="did">
+          <li><strong>Layer 1:</strong> a 5-day FAO-56 water balance for each zone that produces an advisory watering plan.</li>
+          <li><strong>Layer 2:</strong> learns three bounded factors from soil-probe history &mdash; crop coefficient Kc, VPD sensitivity and the ET&#8320; blend weight &mdash; starting from FAO-56 book values and settling in about 14 clean days.</li>
+          <li><strong>Layer 3:</strong> a day-of-year demand curve built from 10 years of ERA5 climate data.</li>
+          <li><strong>Safe by design:</strong> the ESP32 applies min(local cap, plan target), discards plans older than 36 hours, and the plan can never loosen local limits.</li>
+          <li>Ships with a standalone demo page that fetches the live Open-Meteo forecast and exports CSV.</li>
+        </ul>
+      </div>
+      <div class="card__foot"><button class="more-btn" type="button" aria-expanded="false" aria-controls="m-forecast"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10"/></svg><span>Details</span></button></div>
+    </article>
+
+    <article class="card" id="p-solar" data-cat="energy iot" data-tags="esp32 rpi python mppt bms costing ieee">
+      <div class="card__top"><p class="card__kind">Team project &middot; Group 2026.2.7</p><span class="badge badge--done">Prototype tested</span></div>
+      <h3 class="card__title">Hybrid solar&ndash;grid fast charger with AI diagnostics</h3>
+      <p class="card__sum">Solar first, grid as backup: fast charging with MPPT, smart battery protection and a machine-learning model that spots faults from live sensor data. An ESP32 edge node reports to a Raspberry&nbsp;Pi Zero&nbsp;2&nbsp;W server.</p>
+      <p class="card__meta">AIUB &middot; four members &middot; prototype data 19&ndash;27 Jul 2026</p>
+      <div class="tools"><span class="tool">ESP32</span><span class="tool">Raspberry Pi Zero 2 W</span><span class="tool">MPPT</span><span class="tool">BMS</span><span class="tool">Python ML</span></div>
+      <div class="card__more" id="m-solar" hidden>
+        <ul class="did">
+          <li><strong>My parts:</strong> environmental impact, and project finance and costing &mdash; component cost BDT 41,712.</li>
+          <li><strong>Simulation vs hardware:</strong> compared simulated behaviour with the real prototype, and presented the live demonstration.</li>
+          <li><strong>Writing:</strong> wrote chapters of the six-chapter project book (8% iThenticate similarity, no integrity flags) and co-wrote a condensed 6-page IEEE-format paper.</li>
+          <li><strong>Team dataset:</strong> 302,915 raw samples, 301,696 after cleaning.</li>
+        </ul>
+      </div>
+      <div class="card__foot"><button class="more-btn" type="button" aria-expanded="false" aria-controls="m-solar"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10"/></svg><span>Details</span></button></div>
+    </article>
+
+    <article class="card" id="p-pulseguard" data-cat="iot" data-tags="">
+      <div class="card__top"><p class="card__kind">Group project</p><span class="badge badge--plan">Proposal submitted</span></div>
+      <h3 class="card__title">PulseGuard &mdash; embedded ML for physiological monitoring</h3>
+      <p class="card__sum">A group project that brings machine learning onto embedded hardware to monitor physiological signals. Work started on 15 October 2026 and the proposal was submitted on 5 November 2026.</p>
+      <p class="card__meta">AIUB &middot; group &middot; Oct 2026 &ndash; present</p>
+      <div class="tools"><span class="tool">Embedded systems</span><span class="tool">Machine learning</span><span class="tool">Physiological sensing</span></div>
+    </article>
+
+    <article class="card" id="p-parktag" data-cat="iot" data-tags="arduino cpp nfc sensors i2c costing">
+      <div class="card__top"><p class="card__kind">Course project</p><span class="badge badge--done">Designed</span></div>
+      <h3 class="card__title">ParkTag &mdash; NFC smart parking system</h3>
+      <p class="card__sum">An Arduino parking system where an NFC card is both ticket and key: tap in and the gate opens; tap out and the screen shows your time and bill in taka.</p>
+      <p class="card__meta">Arduino Uno R3 &middot; Dhaka-sourced parts &middot; Sep 2026</p>
+      <div class="tools"><span class="tool">Arduino Uno</span><span class="tool">MFRC522 NFC/RFID</span><span class="tool">DS3231 RTC</span><span class="tool">I&sup2;C LCD</span><span class="tool">Servo gates</span></div>
+      <div class="card__more" id="m-parktag" hidden>
+        <ul class="did">
+          <li>Two NFC/RFID readers (entry and exit), four IR slot sensors, two servo barrier gates, and a 16&times;2 I&sup2;C screen at each gate.</li>
+          <li>Billing in BDT with a first-hour minimum, an hourly rate, a daily cap and a grace period; a battery-backed DS3231 clock keeps billing right through power cuts.</li>
+          <li>Picked IR over ultrasonic sensors to save pins, and an I&sup2;C backpack to cut each display from six pins to two.</li>
+          <li>Added an AMS1117 3.3&nbsp;V regulator so two RFID readers don&rsquo;t overload the Uno; a red LED and buzzer warn when all four slots are full.</li>
+          <li>Delivered a project proposal, a full wiring diagram, and a component list costed in taka with a contingency budget.</li>
+        </ul>
+      </div>
+      <div class="card__foot"><button class="more-btn" type="button" aria-expanded="false" aria-controls="m-parktag"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10"/></svg><span>Details</span></button></div>
+    </article>
+
+    <article class="card" id="p-offgrid" data-cat="energy" data-tags="matlab simulink pv ieee">
+      <div class="card__top"><p class="card__kind">Course project &middot; Renewable Energy Tech.</p><span class="badge badge--done">Completed</span></div>
+      <h3 class="card__title">Off-grid solar PV design for Bangladesh</h3>
+      <p class="card__sum">Sizing and simulation of a standalone solar system under Bangladeshi sunlight and load conditions, ending in a 2S&nbsp;&times;&nbsp;4P eight-module array.</p>
+      <p class="card__meta">AIUB &middot; group &middot; IEEE-format report</p>
+      <div class="tools"><span class="tool">MATLAB</span><span class="tool">Simulink</span><span class="tool">PV sizing</span><span class="tool">IEEE writing</span></div>
+      <div class="card__more" id="m-offgrid" hidden>
+        <ul class="did">
+          <li>Modelled the array in MATLAB and Simulink and produced the I&ndash;V and P&ndash;V curves used to justify the configuration.</li>
+          <li>Worked the sizing by hand first &mdash; sunlight, module output, series and parallel layout &mdash; so the simulation checked the reasoning instead of replacing it.</li>
+          <li>Wrote it up in IEEE format, stating every assumption and citing a source for every figure that wasn&rsquo;t measured.</li>
+        </ul>
+      </div>
+      <div class="card__foot"><button class="more-btn" type="button" aria-expanded="false" aria-controls="m-offgrid"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10"/></svg><span>Details</span></button></div>
+    </article>
+
+    <article class="card" id="p-thesis" data-cat="research" data-tags="research">
+      <div class="card__top"><p class="card__kind">Undergraduate thesis</p><span class="badge badge--wip">In progress</span></div>
+      <h3 class="card__title">How colour and layout steer attention on web pages</h3>
+      <p class="card__sum">A group study of how visual design choices change where people actually look &mdash; evaluating eye-tracking datasets, then designing our own tests for the gaps.</p>
+      <p class="card__meta">AIUB &middot; group research</p>
+      <div class="tools"><span class="tool">Research methods</span><span class="tool">Dataset evaluation</span><span class="tool">Experiment design</span></div>
+      <div class="card__more" id="m-thesis" hidden>
+        <ul class="did">
+          <li>Compared published eye-tracking and saliency datasets &mdash; UEyes, Imp1k, FiWI &mdash; against what the study needed.</li>
+          <li>Helped design tests for the gaps: A/B tests, five-second memory tests, blur tests, distraction tests and side-by-side ranking.</li>
+        </ul>
+      </div>
+      <div class="card__foot"><button class="more-btn" type="button" aria-expanded="false" aria-controls="m-thesis"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10"/></svg><span>Details</span></button></div>
+    </article>
+
+    <article class="card" id="p-steam" data-cat="research" data-tags="hci research">
+      <div class="card__top"><p class="card__kind">Coursework &middot; HCI</p><span class="badge badge--done">Completed</span></div>
+      <h3 class="card__title">Usability analysis of the Steam desktop app</h3>
+      <p class="card__sum">A screen-by-screen check of a large desktop app against Don Norman&rsquo;s design principles, delivered as an annotated presentation.</p>
+      <p class="card__meta">AIUB &middot; sole author</p>
+      <div class="tools"><span class="tool">Usability heuristics</span><span class="tool">Annotated screenshots</span></div>
+      <div class="card__more" id="m-steam" hidden>
+        <ul class="did">
+          <li>Judged a messy real interface against a fixed checklist &mdash; visibility, feedback, affordance, mapping, constraints, consistency &mdash; instead of giving a general opinion.</li>
+          <li>Marked the evidence directly on screenshots so a reader can check each conclusion for themselves.</li>
+        </ul>
+      </div>
+      <div class="card__foot"><button class="more-btn" type="button" aria-expanded="false" aria-controls="m-steam"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M6 1v10M1 6h10"/></svg><span>Details</span></button></div>
+    </article>
+
+    <article class="card" id="p-hsc" data-cat="teaching" data-tags="html teaching">
+      <div class="card__top"><p class="card__kind">Teaching material</p><span class="badge badge--done">Completed</span></div>
+      <h3 class="card__title">Animated HTML &amp; web design lessons</h3>
+      <p class="card__sum">A lesson set for the HSC ICT web design unit, with the demos coded rather than described &mdash; students watch the markup and the result change together.</p>
+      <p class="card__meta">HSC ICT curriculum &middot; built from scratch</p>
+      <div class="tools"><span class="tool">HTML</span><span class="tool">CSS</span><span class="tool">PowerPoint animation</span></div>
+    </article>
+  </div>
+  <p class="empty" id="empty">No projects match that filter yet.</p>
+</section>
+
+<!-- ══ EXPERIENCE ══════════════════════════════════════════════════ -->
 <section class="sec rv" id="experience">
   <div class="sec__head">
     <h2 class="sec__title">Experience</h2>
-    <p class="sec__note">Teaching &nbsp;·&nbsp; customer-facing work</p>
+    <p class="sec__note">Teaching &middot; training &middot; customer-facing work</p>
   </div>
 
   <article class="entry">
     <div class="rail">
       <p class="rail__kind">Academic teacher</p>
-      <p class="rail__meta">
-        <span>Carupath Academic Coaching</span>
-        <span>IT department</span>
-        <span>Oct 2022 &ndash; Sep 2025</span>
-      </p>
+      <p class="rail__meta"><span>Carupath Academic Coaching</span><span>IT department</span><span>Jan 2024 &ndash; Sep 2025</span></p>
     </div>
     <div>
-      <h3 class="body__title">Teaching technical subjects to students starting from zero</h3>
-      <p class="body__sum">
-        Three years teaching IT subjects to students with no background in them. Teaching a subject to somebody
-        who has never seen it is the fastest way to find out where your own explanation breaks down &mdash; and
-        that habit carries straight into writing a design document somebody else has to act on.
-      </p>
+      <h3 class="body__title">Teaching IT to students starting from zero</h3>
+      <div class="nums"><span><b>100+</b>students taught</span><span><b>1 yr 9 mo</b>in the role</span></div>
       <ul class="did">
-        <li><strong>Built lesson material from the ground up</strong> for students at mixed levels within the same class.</li>
-        <li><strong>Explained technical judgements to non-technical listeners</strong> daily &mdash; the same task as defending a design decision to a client or a panel.</li>
+        <li><strong>Wrote step-by-step practical exercise sheets</strong> and lesson material for mixed-level classes.</li>
+        <li><strong>Kept marks and attendance</strong> in Excel and Google Sheets, and prepared progress reports and result sheets for parents and faculty &mdash; keeping student information confidential.</li>
+        <li><strong>Stayed in touch with parents and students</strong> by phone and WhatsApp, and helped bring in new enrolments.</li>
+        <li><strong>Handled day-to-day admin</strong> &mdash; scheduling sessions, sending reminders, drafting notices, and running exam days.</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="entry">
+    <div class="rail">
+      <p class="rail__kind">Brand promoter</p>
+      <p class="rail__meta"><span>ACI Limited</span><span>Twinkle Baby Pant Diaper</span><span>Feb 2023 &ndash; Nov 2023</span></p>
+    </div>
+    <div>
+      <h3 class="body__title">Face-to-face sales and product communication</h3>
+      <div class="nums"><span><b>50+</b>outlets &amp; events</span><span><b>100+</b>customers on a typical day</span></div>
+      <ul class="did">
+        <li><strong>Demonstrated product features and made sales</strong>, meeting my sales target most of the time.</li>
+        <li><strong>Checked stock and displays</strong> against brand guidelines across retail outlets and events.</li>
       </ul>
     </div>
   </article>
@@ -632,58 +1038,48 @@ p{margin:0}
   <article class="entry">
     <div class="rail">
       <p class="rail__kind">Volunteer teacher</p>
-      <p class="rail__meta">
-        <span>Bidyanondo Foundation</span>
-        <span>Jan 2019 &ndash; Dec 2023</span>
-      </p>
+      <p class="rail__meta"><span>Bidyanondo Foundation</span><span>Jan 2022 &ndash; Dec 2023</span></p>
     </div>
     <div>
-      <h3 class="body__title">Five years teaching in a resource-limited setting</h3>
-      <p class="body__sum">
-        Volunteer teaching with limited materials and a wide spread of ability in one room, which meant
-        rebuilding the same explanation several ways until it landed for everybody rather than for the fastest
-        student.
-      </p>
-    </div>
-  </article>
-
-  <article class="entry">
-    <div class="rail">
-      <p class="rail__kind">Brand promoter</p>
-      <p class="rail__meta">
-        <span>ACI Limited</span>
-        <span>Twinkle Baby Pant Diaper</span>
-        <span>Feb 2023 &ndash; Nov 2023</span>
-      </p>
-    </div>
-    <div>
-      <h3 class="body__title">Direct customer-facing sales and product communication</h3>
-      <p class="body__sum">
-        Face-to-face promotion work for a consumer brand &mdash; a different communication discipline from a
-        classroom or a technical report, and the one that taught me how quickly you lose someone who
-        didn&rsquo;t ask to be talked to.
-      </p>
+      <h3 class="body__title">Teaching and training volunteers in a resource-limited setting</h3>
+      <div class="nums"><span><b>50+</b>volunteers onboarded &amp; trained</span></div>
+      <ul class="did">
+        <li><strong>Taught with limited materials</strong> and a wide spread of ability in one room, rebuilding the same explanation until it landed for everybody.</li>
+        <li><strong>Helped screen and recruit new volunteers</strong>, then trained them through group sessions, one-to-one guidance and shared notes.</li>
+        <li><strong>Helped run programmes and events</strong> for the foundation.</li>
+      </ul>
     </div>
   </article>
 </section>
 
-<!-- ══ EDUCATION ═════════════════════════════════════════════════ -->
+<!-- ══ EDUCATION ═══════════════════════════════════════════════════ -->
 <section class="sec rv" id="education">
   <div class="sec__head">
     <h2 class="sec__title">Education</h2>
+    <p class="sec__note">All BSc coursework complete &middot; capstone &amp; thesis remaining</p>
   </div>
 
   <article class="entry">
     <div class="rail">
-      <p class="rail__kind">BSc &mdash; in progress</p>
-      <p class="rail__meta"><span>Expected December 2026</span></p>
+      <p class="rail__kind">BSc &mdash; final year</p>
+      <p class="rail__meta"><span>Expected December 2026</span><span>CGPA 3.38 / 4.00</span></p>
     </div>
     <div>
       <h3 class="body__title">Electrical &amp; Electronic Engineering</h3>
-      <p class="body__sum">American International University&ndash;Bangladesh (AIUB), Dhaka &nbsp;·&nbsp; CGPA 3.38 / 4.00 (ongoing)</p>
-      <div class="tools">
-        <span class="tool">Power systems</span><span class="tool">Renewable energy technology</span><span class="tool">Numerical methods</span>
-        <span class="tool">Web technologies</span><span class="tool">Human&ndash;computer interaction</span>
+      <p class="body__sum">American International University&ndash;Bangladesh (AIUB), Dhaka</p>
+      <div class="course-tabs" role="group" aria-label="Coursework">
+        <button class="filter" type="button" data-course="eng" aria-pressed="true">Engineering courses</button>
+        <button class="filter" type="button" data-course="biz" aria-pressed="false">Business &amp; management</button>
+      </div>
+      <div class="tools course-panel" data-panel="eng">
+        <span class="tool">Digital Logic &amp; Circuits (Verilog)</span><span class="tool">Control Systems</span><span class="tool">Renewable Energy Technology</span>
+        <span class="tool">Nuclear Power Engineering</span><span class="tool">Numerical Methods (MATLAB)</span><span class="tool">Power Systems</span>
+        <span class="tool">Web Technologies</span><span class="tool">Human&ndash;Computer Interaction</span>
+      </div>
+      <div class="tools course-panel" data-panel="biz" hidden>
+        <span class="tool">Principles of Accounting</span><span class="tool">Principles of Economics</span><span class="tool">Engineering Economics</span>
+        <span class="tool">Industrial Management</span><span class="tool">Human Resource Management</span><span class="tool">Organizational Behaviour</span>
+        <span class="tool">Business Communication</span>
       </div>
     </div>
   </article>
@@ -691,78 +1087,108 @@ p{margin:0}
   <article class="entry">
     <div class="rail">
       <p class="rail__kind">HSC &mdash; Science</p>
-      <p class="rail__meta"><span>2021 &nbsp;·&nbsp; GPA 5.00 / 5.00</span></p>
+      <p class="rail__meta"><span>2021 &middot; Dhaka Board</span><span>GPA 5.00 / 5.00</span></p>
     </div>
-    <div>
-      <h3 class="body__title">Mazid Jarina Foundation School and College</h3>
-    </div>
+    <div><h3 class="body__title">Mazid Jarina Foundation School and College</h3></div>
   </article>
 
   <article class="entry">
     <div class="rail">
       <p class="rail__kind">SSC &mdash; Science</p>
-      <p class="rail__meta"><span>2019 &nbsp;·&nbsp; GPA 4.39 / 5.00</span></p>
+      <p class="rail__meta"><span>2019 &middot; Dhaka Board</span><span>GPA 4.39 / 5.00</span></p>
     </div>
-    <div>
-      <h3 class="body__title">Secondary School Certificate</h3>
-    </div>
+    <div><h3 class="body__title">Shaheed Police Smrity College, Dhaka</h3></div>
   </article>
 </section>
 
-<!-- ══ SKILLS ════════════════════════════════════════════════════ -->
+<!-- ══ SKILLS ══════════════════════════════════════════════════════ -->
 <section class="sec rv" id="skills">
   <div class="sec__head">
     <h2 class="sec__title">Skills</h2>
-    <p class="sec__note">Tools I have actually shipped something with</p>
+    <p class="sec__note">Tools I have actually built something with</p>
   </div>
+  <p class="skills__hint">Skills marked &#8599; are clickable &mdash; they show the projects where I used them.</p>
   <div class="skills">
     <div class="skill">
+      <h3>Embedded &amp; hardware</h3>
+      <div class="sk">
+        <button type="button" data-skill="esp32">ESP32</button><button type="button" data-skill="arduino">Arduino Uno</button>
+        <button type="button" data-skill="rpi">Raspberry Pi</button><button type="button" data-skill="sensors">Sensor integration</button>
+        <button type="button" data-skill="i2c">I&sup2;C &amp; level shifting</button><button type="button" data-skill="nfc">NFC / RFID</button>
+        <span>Relay &amp; MOSFET pump control</span>
+      </div>
+    </div>
+    <div class="skill">
+      <h3>Programming &amp; apps</h3>
+      <div class="sk">
+        <button type="button" data-skill="cpp">C / C++</button><button type="button" data-skill="js">JavaScript</button>
+        <button type="button" data-skill="html">HTML / CSS</button><button type="button" data-skill="python">Python</button>
+        <button type="button" data-skill="firebase">Firebase</button><button type="button" data-skill="capacitor">Capacitor (Android)</button>
+        <span>Verilog</span>
+      </div>
+    </div>
+    <div class="skill">
       <h3>Design &amp; simulation</h3>
-      <p>AutoCAD · NI Multisim (all versions) · PSpice · MATLAB · Simulink · Proteus</p>
+      <div class="sk">
+        <button type="button" data-skill="matlab">MATLAB</button><button type="button" data-skill="simulink">Simulink</button>
+        <span>AutoCAD</span><span>NI Multisim</span><span>PSpice</span><span>Proteus</span>
+      </div>
     </div>
     <div class="skill">
-      <h3>Programming</h3>
-      <p>C · C++ · Python (ML pipeline work) · HTML / CSS / JavaScript</p>
+      <h3>Energy &amp; water</h3>
+      <div class="sk">
+        <button type="button" data-skill="pv">PV system sizing</button><button type="button" data-skill="mppt">MPPT</button>
+        <button type="button" data-skill="bms">BMS</button><button type="button" data-skill="fao56">FAO-56 water balance</button>
+        <button type="button" data-skill="costing">Project costing (BDT)</button>
+      </div>
     </div>
     <div class="skill">
-      <h3>Hardware &amp; embedded</h3>
-      <p>ESP32 · Raspberry Pi Zero 2 W · sensor integration · relay and pump control · GSM modules · MPPT and BMS concepts</p>
+      <h3>Writing &amp; research</h3>
+      <div class="sk">
+        <button type="button" data-skill="ieee">IEEE technical writing</button><button type="button" data-skill="research">Research methods</button>
+        <button type="button" data-skill="hci">Usability evaluation</button>
+        <span>Project books</span><span>MS Word / Excel / PowerPoint</span><span>Google Workspace</span>
+      </div>
     </div>
     <div class="skill">
-      <h3>Documentation</h3>
-      <p>IEEE-format technical writing · structured project books · MS Word / Excel / PowerPoint</p>
-    </div>
-    <div class="skill">
-      <h3>Domains</h3>
-      <p>Power systems · renewable energy · embedded IoT · numerical methods · web technologies · human&ndash;computer interaction</p>
+      <h3>People &amp; teaching</h3>
+      <div class="sk">
+        <button type="button" data-skill="teaching">Lesson design</button>
+        <span>Volunteer training</span><span>LMS (Google Classroom)</span><span>Parent &amp; client communication</span><span>Sales &amp; customer service</span>
+      </div>
     </div>
     <div class="skill">
       <h3>Languages</h3>
-      <p>Bangla (native) · English (professional working proficiency)</p>
+      <div class="sk"><span>Bangla &mdash; native</span><span>English &mdash; professional working proficiency</span></div>
     </div>
   </div>
 </section>
 
-<!-- ══ CONTACT ═══════════════════════════════════════════════════ -->
+<!-- ══ CONTACT ═════════════════════════════════════════════════════ -->
 <section class="sec rv" id="contact">
   <div class="sec__head">
     <h2 class="sec__title">Get in touch</h2>
-    <p class="sec__note">Open to internships and graduate roles</p>
+    <p class="sec__note">Based in Dhaka &middot; on-site, hybrid or remote</p>
   </div>
-
   <div class="close__grid">
     <div>
-      <p class="prose" style="color:var(--ink-soft)">
-        I&rsquo;m looking for internships and entry-level roles where I can keep working on real hardware and
-        real documentation &mdash; embedded and IoT, power and renewable energy, or engineering roles that involve
-        explaining technical work to people outside the team. I&rsquo;m based in Dhaka and available for on-site,
-        hybrid or remote work.
+      <p class="prose contact__lede">
+        I&rsquo;m looking for internships and entry-level roles where I can keep working on real hardware and real
+        documentation &mdash; and on roles where explaining technical work clearly to people outside the team matters.
       </p>
+      <ul class="looking" aria-label="Areas I'm interested in">
+        <li>Embedded &amp; IoT</li><li>Power &amp; renewable energy</li><li>Application engineering</li>
+        <li>Operations &amp; supply chain</li><li>HR, training &amp; L&amp;D</li><li>Business development</li>
+      </ul>
       <div class="chips">
         <a class="chip chip--solid" href="mailto:bahestymonfared@gmail.com">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2"/><path d="M3 6l9 6.5L21 6"/></svg>
           bahestymonfared@gmail.com
         </a>
+        <button class="chip chip--copy" type="button" data-copy="bahestymonfared@gmail.com" aria-label="Copy email address">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8.5" y="8.5" width="12" height="12" rx="2"/><path d="M15.5 8.5V5.5a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h3"/></svg>
+          Copy
+        </button>
         <a class="chip" href="tel:+8801834211666">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.7 2 2 0 0 1 6.5 3.5z"/></svg>
           +880 1834-211666
@@ -777,10 +1203,9 @@ p{margin:0}
         </a>
       </div>
     </div>
-
     <div class="note">
-      <p><strong>One thing stated plainly:</strong> I am in my final year and graduate in December 2026 &mdash; I don&rsquo;t hold the degree yet.</p>
-      <p>I&rsquo;d rather say that here than have it come up later. Everything on this page is work I have already done.</p>
+      <p><strong>One thing stated plainly:</strong> I am in my final year and graduate in December 2026 &mdash; I don&rsquo;t hold the degree yet. All my coursework is complete; the capstone and thesis remain.</p>
+      <p>I&rsquo;d rather say that here than have it come up later. Everything on this page is work I have actually done.</p>
     </div>
   </div>
 </section>
@@ -788,23 +1213,320 @@ p{margin:0}
 </main>
 
 <footer class="wrap foot">
-  <span>Bahesty Monfared &nbsp;·&nbsp; Dhaka, Bangladesh</span>
-  <span>Last updated August 2026</span>
+  <span>&copy; 2026 Bahesty Monfared &middot; Dhaka, Bangladesh</span>
+  <span>Last updated November 2026</span>
 </footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<button class="totop" id="totop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5.5 11.5L12 5l6.5 6.5"/></svg></button>
 
 <script>
 (function(){
-  var els = document.querySelectorAll('.rv');
-  if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    els.forEach(function(e){ e.classList.add('in'); });
-    return;
+  'use strict';
+  var doc = document, root = doc.documentElement;
+  doc.body.classList.remove('no-js');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function(s, c){ return (c || doc).querySelector(s); };
+  var $$ = function(s, c){ return Array.prototype.slice.call((c || doc).querySelectorAll(s)); };
+
+  /* ── theme toggle ─────────────────────────────────────────────── */
+  var themeBtn = $('#themeBtn');
+  function isDark(){
+    var t = root.getAttribute('data-theme');
+    if (t) return t === 'dark';
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   }
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+  if (themeBtn) themeBtn.addEventListener('click', function(){
+    var next = isDark() ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('bm-theme', next); } catch(e){}
+  });
+
+  /* ── toast ────────────────────────────────────────────────────── */
+  var toastEl = $('#toast'), toastTimer;
+  function toast(msg){
+    if (!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('show'); }, 2200);
+  }
+
+  /* ── copy email ───────────────────────────────────────────────── */
+  $$('[data-copy]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var text = btn.getAttribute('data-copy');
+      function fallback(){
+        var ta = doc.createElement('textarea');
+        ta.value = text; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+        doc.body.appendChild(ta); ta.select();
+        try { doc.execCommand('copy'); toast('Email copied'); } catch(e){ toast(text); }
+        doc.body.removeChild(ta);
+      }
+      if (navigator.clipboard && window.isSecureContext){
+        navigator.clipboard.writeText(text).then(function(){ toast('Email copied'); }, fallback);
+      } else { fallback(); }
     });
-  },{rootMargin:'0px 0px -8% 0px',threshold:0.04});
-  els.forEach(function(e){ io.observe(e); });
+  });
+
+  /* ── scroll progress, back-to-top ─────────────────────────────── */
+  var bar = $('#progress'), totop = $('#totop'), ticking = false;
+  function onScroll(){
+    var h = doc.documentElement.scrollHeight - window.innerHeight;
+    var p = h > 0 ? Math.min(1, window.scrollY / h) : 0;
+    if (bar) bar.style.transform = 'scaleX(' + p + ')';
+    if (totop) totop.classList.toggle('show', window.scrollY > 900);
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){ if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
+  if (totop) totop.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); });
+
+  /* ── active nav link ──────────────────────────────────────────── */
+  var navLinks = $$('.nav__links a');
+  if ('IntersectionObserver' in window){
+    var navIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){
+          navLinks.forEach(function(a){
+            var on = a.getAttribute('href') === '#' + en.target.id;
+            a.classList.toggle('is-active', on);
+            if (on && window.innerWidth < 900){
+              var wrap = a.parentNode;
+              var left = wrap.scrollLeft + a.getBoundingClientRect().left - wrap.getBoundingClientRect().left - 4;
+              wrap.scrollTo({ left: Math.max(0, left), behavior: reduce ? 'auto' : 'smooth' });
+            }
+          });
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    $$('main section[id]').forEach(function(s){ navIO.observe(s); });
+    var heroEl = $('#top');
+    if (heroEl) new IntersectionObserver(function(en){
+      if (en[0].isIntersecting){
+        navLinks.forEach(function(a){ a.classList.remove('is-active'); });
+        var w = $('.nav__links'); if (w) w.scrollTo({ left: 0 });
+      }
+    }, { rootMargin: '-45% 0px -50% 0px' }).observe(heroEl);
+  }
+
+  /* ── reveal on scroll ─────────────────────────────────────────── */
+  var rv = $$('.rv');
+  if (!('IntersectionObserver' in window) || reduce){
+    rv.forEach(function(e){ e.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.02 });
+    rv.forEach(function(e){ io.observe(e); });
+  }
+
+  /* ── rotating role line ───────────────────────────────────────── */
+  var rot = $('#rot');
+  var roles = ['building embedded IoT systems','leading a capstone team','shipping bilingual apps','sizing solar power systems','writing clear technical docs','teaching what I learn'];
+  if (rot && !reduce){
+    var ri = 0;
+    setInterval(function(){
+      rot.classList.add('out');
+      setTimeout(function(){
+        ri = (ri + 1) % roles.length;
+        rot.textContent = roles[ri];
+        rot.classList.remove('out');
+      }, 350);
+    }, 2600);
+  }
+
+  /* ── count-up stats ───────────────────────────────────────────── */
+  var counters = $$('[data-count]');
+  function runCount(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var dec = parseInt(el.getAttribute('data-decimals') || '0', 10);
+    var start = null, dur = 1100;
+    function step(ts){
+      if (el.getAttribute('data-done')) return;
+      if (!start) start = ts;
+      var t = Math.min(1, (ts - start) / dur);
+      var eased = 1 - Math.pow(1 - t, 3);
+      el.textContent = (target * eased).toFixed(dec);
+      if (t < 1) requestAnimationFrame(step); else el.textContent = target.toFixed(dec);
+    }
+    requestAnimationFrame(step);
+  }
+  if (!reduce && 'IntersectionObserver' in window){
+    var cio = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ runCount(en.target); cio.unobserve(en.target); }
+      });
+    }, { threshold: 0.6 });
+    counters.forEach(function(el){ cio.observe(el); });
+  }
+
+  /* ── HydroSense tabs ──────────────────────────────────────────── */
+  var tabs = $$('.tab');
+  function selectTab(tab, focus){
+    tabs.forEach(function(t){
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      var p = doc.getElementById(t.getAttribute('aria-controls'));
+      if (p) p.hidden = !on;
+    });
+    if (focus) tab.focus();
+  }
+  tabs.forEach(function(t, i){
+    t.addEventListener('click', function(){ selectTab(t); });
+    t.addEventListener('keydown', function(e){
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft'){
+        e.preventDefault();
+        var n = (i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+        selectTab(tabs[n], true);
+      }
+    });
+  });
+
+  /* ── decision demo ────────────────────────────────────────────── */
+  var demo = $('#demo');
+  if (demo){
+    var TH = 30, MIN = 10, MAX = 45;
+    var zones = $$('.zone', demo), rain = $('#rain', demo), pump = $('#pump', demo), out = $('#decision', demo);
+    var thPct = (TH - MIN) / (MAX - MIN) * 100;
+    zones.forEach(function(z){ $('.zone__th', z).style.left = 'calc(' + thPct + '% - 1px)'; });
+    function update(){
+      var data = zones.map(function(z){
+        var inp = $('input', z), v = parseInt(inp.value, 10);
+        $('output', z).textContent = v + '%';
+        $('.zone__fill', z).style.width = ((v - MIN) / (MAX - MIN) * 100) + '%';
+        return { el: z, n: z.getAttribute('data-zone'), v: v };
+      });
+      data.forEach(function(d){ d.el.classList.remove('is-dry'); $('.zone__rank', d.el).textContent = ''; });
+      var dry = data.filter(function(d){ return d.v < TH; }).sort(function(a, b){ return a.v - b.v; });
+      dry.forEach(function(d){ d.el.classList.add('is-dry'); });
+      if (rain.checked && dry.length){
+        pump.className = 'pump pump--rain'; pump.textContent = 'Rain skip';
+        out.textContent = 'Rain is on the way, so watering is skipped for now. ' + (dry.length === 1 ? 'Zone ' + dry[0].n + ' is' : dry.length + ' zones are') + ' below 30%, but the rain will do the job for free.';
+      } else if (!dry.length){
+        pump.className = 'pump pump--off'; pump.textContent = 'Pump off';
+        out.textContent = 'Every zone is above the 30% dry line, so the pump stays off. The controller checks again in 60 seconds.';
+      } else {
+        var labels = ['1st', '2nd', '3rd'];
+        dry.forEach(function(d, i){ $('.zone__rank', d.el).textContent = 'Waters ' + labels[i]; });
+        pump.className = 'pump pump--on'; pump.textContent = 'Pump on';
+        var order = dry.map(function(d){ return 'Zone ' + d.n + ' (' + d.v + '%)'; });
+        var txt = order.length === 1 ? order[0] + ' is the only dry zone, so it gets watered.' :
+          order[0] + ' is driest, so it goes first, then ' + order.slice(1).join(', then ') + '.';
+        out.textContent = txt + ' Water goes in short pulses so it soaks in instead of running down the slope.';
+      }
+    }
+    zones.forEach(function(z){ $('input', z).addEventListener('input', update); });
+    rain.addEventListener('change', update);
+    update();
+  }
+
+  /* ── live preview loader ──────────────────────────────────────── */
+  var hsLoad = $('#hsLoad'), hsView = $('#hsView');
+  if (hsLoad && hsView){
+    hsLoad.addEventListener('click', function(){
+      var f = doc.createElement('iframe');
+      f.src = 'https://bahestymonfared.github.io/hydrosense/';
+      f.title = 'HydroSense website (live)';
+      f.loading = 'lazy';
+      f.setAttribute('referrerpolicy', 'no-referrer');
+      hsView.innerHTML = '';
+      hsView.classList.add('has-frame');
+      hsView.appendChild(f);
+    });
+  }
+
+  /* ── project filters + skill links ────────────────────────────── */
+  var cards = $$('.card'), filters = $$('[data-filter]'), empty = $('#empty');
+  var note = $('#skillnote'), noteText = $('#skillnoteText'), clearBtn = $('#skillClear');
+  filters.forEach(function(f){
+    var key = f.getAttribute('data-filter');
+    var n = key === 'all' ? cards.length : cards.filter(function(c){ return (' ' + c.getAttribute('data-cat') + ' ').indexOf(' ' + key + ' ') > -1; }).length;
+    var span = $('.filter__n', f); if (span) span.textContent = n;
+  });
+  function show(pred){
+    var visible = 0;
+    cards.forEach(function(c){ var ok = pred(c); c.hidden = !ok; if (ok) visible++; c.classList.remove('is-hit'); });
+    if (empty) empty.classList.toggle('show', visible === 0);
+    return visible;
+  }
+  function setPressed(key){
+    filters.forEach(function(f){ f.setAttribute('aria-pressed', f.getAttribute('data-filter') === key ? 'true' : 'false'); });
+  }
+  filters.forEach(function(f){
+    f.addEventListener('click', function(){
+      var key = f.getAttribute('data-filter');
+      setPressed(key);
+      note.classList.remove('show');
+      show(function(c){ return key === 'all' || (' ' + c.getAttribute('data-cat') + ' ').indexOf(' ' + key + ' ') > -1; });
+    });
+  });
+  function clearAll(){ setPressed('all'); note.classList.remove('show'); show(function(){ return true; }); }
+  if (clearBtn) clearBtn.addEventListener('click', clearAll);
+
+  $$('[data-skill]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var key = b.getAttribute('data-skill'), label = b.textContent.trim();
+      setPressed(null);
+      var n = show(function(c){ return (' ' + (c.getAttribute('data-tags') || '') + ' ').indexOf(' ' + key + ' ') > -1; });
+      cards.forEach(function(c){ if (!c.hidden) c.classList.add('is-hit'); });
+      noteText.textContent = 'Showing ' + n + (n === 1 ? ' project' : ' projects') + ' that use ' + label + '.';
+      note.classList.add('show');
+      doc.getElementById('projects').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
+
+  /* jump links from the timeline: make sure the card is visible and flash it */
+  $$('[data-jump]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href').slice(1), card = doc.getElementById(id);
+      if (!card) return;
+      e.preventDefault();
+      if (card.hidden) clearAll();
+      card.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      cards.forEach(function(c){ c.classList.remove('is-hit'); });
+      card.classList.add('is-hit');
+      setTimeout(function(){ card.classList.remove('is-hit'); }, 2400);
+      if (history.replaceState) history.replaceState(null, '', '#' + id);
+    });
+  });
+
+  /* ── card detail toggles ──────────────────────────────────────── */
+  $$('.more-btn').forEach(function(b){
+    b.addEventListener('click', function(){
+      var panel = doc.getElementById(b.getAttribute('aria-controls'));
+      var open = b.getAttribute('aria-expanded') === 'true';
+      b.setAttribute('aria-expanded', open ? 'false' : 'true');
+      $('span', b).textContent = open ? 'Details' : 'Less';
+      if (panel) panel.hidden = open;
+    });
+  });
+
+  /* ── coursework tabs ──────────────────────────────────────────── */
+  var courseBtns = $$('[data-course]');
+  courseBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      var key = b.getAttribute('data-course');
+      courseBtns.forEach(function(x){ x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      $$('.course-panel').forEach(function(p){ p.hidden = p.getAttribute('data-panel') !== key; });
+    });
+  });
+
+  /* ── print: open everything ───────────────────────────────────── */
+  window.addEventListener('beforeprint', function(){
+    counters.forEach(function(el){
+      el.setAttribute('data-done', '1');
+      el.textContent = parseFloat(el.getAttribute('data-count')).toFixed(parseInt(el.getAttribute('data-decimals') || '0', 10));
+    });
+    $$('.card__more,.panel,.course-panel').forEach(function(p){ p.setAttribute('data-was-hidden', p.hidden ? '1' : ''); p.hidden = false; });
+    cards.forEach(function(c){ c.setAttribute('data-was-hidden', c.hidden ? '1' : ''); c.hidden = false; });
+  });
+  window.addEventListener('afterprint', function(){
+    $$('[data-was-hidden]').forEach(function(p){ p.hidden = p.getAttribute('data-was-hidden') === '1'; p.removeAttribute('data-was-hidden'); });
+  });
 })();
 </script>
 
